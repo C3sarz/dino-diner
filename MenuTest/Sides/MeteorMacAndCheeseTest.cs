@@ -25,7 +25,7 @@ namespace MenuTest.Sides
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             Assert.Contains<string>("Macaroni Noodles", mmc.Ingredients);
             Assert.Contains<string>("Cheese Product", mmc.Ingredients);
-            Assert.Contains<string>("Pork Sausuage", mmc.Ingredients);
+            Assert.Contains<string>("Pork Sausage", mmc.Ingredients);
             Assert.Equal<int>(3, mmc.Ingredients.Count);
         }
 
@@ -57,7 +57,7 @@ namespace MenuTest.Sides
         {
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, Size.Medium);
+            Assert.Equal<Size>(Size.Medium, mmc.Size);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace MenuTest.Sides
         {
             MeteorMacAndCheese mmc = new MeteorMacAndCheese();
             mmc.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, Size.Large);
+            Assert.Equal<Size>(Size.Large, mmc.Size);
         }
     }
 }

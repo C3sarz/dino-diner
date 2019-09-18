@@ -24,8 +24,8 @@ namespace MenuTest.Sides
         {
             Triceritots tt = new Triceritots();
             Assert.Contains<string>("Potato", tt.Ingredients);
-            Assert.Contains<string>("Breading", tt.Ingredients);
-            Assert.Contains<string>("Vegtable Oil", tt.Ingredients);
+            Assert.Contains<string>("Salt", tt.Ingredients);
+            Assert.Contains<string>("Vegetable Oil", tt.Ingredients);
             Assert.Equal<int>(3, tt.Ingredients.Count);
         }
 
@@ -57,7 +57,7 @@ namespace MenuTest.Sides
         {
             Triceritots tt = new Triceritots();
             tt.Size = Size.Medium;
-            Assert.Equal<Size>(Size.Medium, Size.Medium);
+            Assert.Equal<Size>(Size.Medium, tt.Size);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace MenuTest.Sides
         {
             Triceritots tt = new Triceritots();
             tt.Size = Size.Large;
-            Assert.Equal<Size>(Size.Large, Size.Large);
+            Assert.Equal<Size>(Size.Large, tt.Size);
         }
     }
 }
