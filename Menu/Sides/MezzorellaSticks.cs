@@ -5,18 +5,18 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
-    /// Manages the Meteor MnC side.
+    /// Manages the MSticks
     /// </summary>
-    public class MeteorMacAndCheese : Side
+    public class MezzorellaSticks : Side
     {
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public MeteorMacAndCheese()
+        public MezzorellaSticks()
         {
-            ingredients.Add("Macaroni Noodles");
-            ingredients.Add("Cheese Product");
-            ingredients.Add("Pork Sausage");
+            this.ingredients.Add("Breading");
+            this.ingredients.Add("Cheese Product");
+            this.ingredients.Add("Vegetable Oil");
         }
 
         /// <summary>
@@ -24,26 +24,27 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public override Size Size
         {
-            get => Size;
+            get => this.Size;
             set
             {
-                Size = value;
-                switch (Size)
+                this.Size = value;
+                switch (this.Size)
                 {
                     case Size.Large:
-                        Price = 1.95;
-                        Calories = 520;
+                        this.Price = 1.95;
+                        this.Calories = 720;
                         break;
                     case Size.Medium:
-                        Price = 1.45;
-                        Calories = 490;
+                        this.Price = 1.45;
+                        this.Calories = 610;
                         break;
                     case Size.Small:
-                        Price = 0.99;
-                        Calories = 420;
+                        this.Price = 0.99;
+                        this.Calories = 540;
                         break;
                 }
             }
         }
+
     }
 }

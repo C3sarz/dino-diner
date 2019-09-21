@@ -4,7 +4,6 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
     public enum Size
     {
         Small,
@@ -37,7 +36,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public virtual Size Size { get; set; }
+        public abstract Size Size { get; set; }
 
     }
 }
