@@ -7,21 +7,19 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Manages the Dino Nuggets entree.
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         private uint _nuggetNumber;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> Ingredients = new List<string>();
+                List<string> ingredients = new List<string>();
                 for(int i = 0;i < _nuggetNumber; i++)
                 {
-                    Ingredients.Add("Chicken Nugget");
+                    ingredients.Add("Chicken Nugget");
                 }
-                return Ingredients;
+                return ingredients;
             }
         }
 

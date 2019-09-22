@@ -7,16 +7,14 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Manages the Pterodactyl Wings entree.
     /// </summary>
-    public class PterodactylWings
+    public class PterodactylWings : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> Ingredients = new List<string>() {"Chicken","Wing Sauce" };
-                return Ingredients;
+                List<string> ingredients = new List<string>() {"Chicken","Wing Sauce" };
+                return ingredients;
             }
         }
 

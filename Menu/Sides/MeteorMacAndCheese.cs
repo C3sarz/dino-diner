@@ -17,6 +17,13 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Macaroni Noodles");
             ingredients.Add("Cheese Product");
             ingredients.Add("Pork Sausage");
+            Size = Size.Small;
+        }
+
+        private List<string> ingredients = new List<string>();
+        public override List<string> Ingredients
+        {
+            get { return ingredients; }
         }
 
         /// <summary>
@@ -24,11 +31,15 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public override Size Size
         {
-            get => Size;
+            get
+            {
+                if (this.Price == 1.95) return Size.Large;
+                else if (this.Price == 1.45) return Size.Medium;
+                else return Size.Small;
+            }
             set
             {
-                Size = value;
-                switch (Size)
+                switch (value)
                 {
                     case Size.Large:
                         Price = 1.95;
@@ -41,6 +52,9 @@ namespace DinoDiner.Menu.Sides
                     case Size.Small:
                         Price = 0.99;
                         Calories = 420;
+                        break;
+                    default:
+                        Calories = 999;
                         break;
                 }
             }

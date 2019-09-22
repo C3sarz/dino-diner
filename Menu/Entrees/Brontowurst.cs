@@ -7,23 +7,21 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Manages the Brontowurst entree.
     /// </summary>
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
         private bool _bun = true;
         private bool _peppers = true;
         private bool _onions = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
 
-        public List<string> Ingredients  
+        public override List<string> Ingredients  
         {
             get
             {
-                List<string> Ingredients = new List<string>() { "Brautwurst" };
-                if (_bun) Ingredients.Add("Whole Wheat Bun");
-                if (_peppers) Ingredients.Add("Peppers");
-                if (_onions) Ingredients.Add("Onion");
-                return Ingredients;
+                List<string> ingredients = new List<string>() { "Brautwurst" };
+                if (_bun) ingredients.Add("Whole Wheat Bun");
+                if (_peppers) ingredients.Add("Peppers");
+                if (_onions) ingredients.Add("Onion");
+                return ingredients;
             }
         }
 

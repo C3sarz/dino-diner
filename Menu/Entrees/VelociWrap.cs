@@ -7,22 +7,20 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Manages the VelociWrap.
     /// </summary>
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
         private bool _dressing = true;
         private bool _lettuce = true;
         private bool _cheese = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> Ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast" };
-                if (_dressing) Ingredients.Add("Ceasar Dressing");
-                if (_lettuce) Ingredients.Add("Romaine Lettuce");
-                if (_cheese) Ingredients.Add("Parmesan Cheese");
-                return Ingredients;
+                List<string> ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast" };
+                if (_dressing) ingredients.Add("Ceasar Dressing");
+                if (_lettuce) ingredients.Add("Romaine Lettuce");
+                if (_cheese) ingredients.Add("Parmesan Cheese");
+                return ingredients;
             }
         }
 

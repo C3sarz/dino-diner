@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Manages the King burger.
     /// </summary>
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         private bool _ketchup = true;
         private bool _lettuce = true;
@@ -17,22 +17,20 @@ namespace DinoDiner.Menu.Entrees
         private bool _pickle = true;
         private bool _onion = true;
         private bool _mayo = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
-                List<string> Ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
-                if (_lettuce) Ingredients.Add("Lettuce");
-                if (_mustard) Ingredients.Add("Mustard");
-                if (_ketchup) Ingredients.Add("Ketchup"); 
-                if (_bun) Ingredients.Add("Whole Wheat Bun");
-                if (_tomato) Ingredients.Add("Tomato");
-                if (_pickle) Ingredients.Add("Pickle");
-                if (_onion) Ingredients.Add("Onion");
-                if (_mayo) Ingredients.Add("Mayo");
-                return Ingredients;
+                List<string> ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie" };
+                if (_lettuce) ingredients.Add("Lettuce");
+                if (_mustard) ingredients.Add("Mustard");
+                if (_ketchup) ingredients.Add("Ketchup"); 
+                if (_bun) ingredients.Add("Whole Wheat Bun");
+                if (_tomato) ingredients.Add("Tomato");
+                if (_pickle) ingredients.Add("Pickle");
+                if (_onion) ingredients.Add("Onion");
+                if (_mayo) ingredients.Add("Mayo");
+                return ingredients;
             }
         }
 
