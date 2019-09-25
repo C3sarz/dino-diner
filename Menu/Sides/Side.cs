@@ -7,12 +7,6 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Size enum.
     /// </summary>
-    public enum Size
-    {
-        Small = 0,
-        Medium = 1,
-        Large = 2
-    }
     public abstract class Side
     {
 
