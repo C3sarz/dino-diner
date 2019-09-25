@@ -1,0 +1,81 @@
+---
+uti: com.xamarin.workbook
+id: 7ea39dd9-8b58-4d99-b301-8cfda42f16f3
+title: 2-add-side-classes-and-abstract-base-classes
+platforms:
+- Console
+---
+---
+layout: milestone
+---
+
+# Menu Milestone 3
+
+## Add Drink Classes + Unit Tests (100 points Possible)
+
+DinoDiner currently offers four drinks:
+
+* Sodasaurus (old-fashioned sodas)
+
+* Tyrannotea (iced tea)
+
+* JurrasicJava (coffee)
+
+* Water (Water)
+
+For each of these sides, you will need to create a corresponding C# class that inherits from a Drink abstract base class that you will also need to write.
+
+## General Requirements
+
+You will need to follow the provided style guide.
+
+Each drink should be declared in the **DinoDiner.Menu.Drinks** namespace.
+
+
+### Drink Base Class (10 points)
+Implement an abstract base class to represent any drink.  It should contain properties for: **Price** (a double), **Calories** (an uint), **Ingredients** (a List&lt;string&gt;), **Size**  (using a Size enum, default small), and **Ice** (bool, default true). It should also implement a method **HoldIce()** which sets the **Ice** property to false.
+
+### SodasaurusFlavor enum (10 points)
+Implement an enum of flavors for the soda fountain.  Possible flavors are: Cola, Orange, Vanilla, Chocolate, RootBeer, Cherry, and Lime.
+
+### Sodasaurus Class (10 points)
+Implement a class to represent a Sodasaurus that inherits from the Drink class.  It should have an additional property of **Flavor** with type SodasaurusFlavor.  The price of a Sodasaurus is **$1.50** (small), **$2.00** (medium), and **$2.50** (large).  Calories are **112** (small), **156** (medium), and **208** (large). Its ingredients should be "Water", "Natural Flavors", and "Cane Sugar."
+
+### Tyrannotea Class (10 points)
+Implement a class to represent Tyrannotea that inherits from Drink.  It should have properties for **Sweet** (a bool, default false) and **Lemon** (a bool, default false).  Its price is **$0.99** (small), **$1.49** (medium), and **$1.99** (large).  Its calories are **8** (small), **16** (medium), and **32** (large).  Adding sweetener doubles these values.  It should also implement a method **AddLemon()** which sets the lemon to true.  Its ingredients should be "Water", "Tea", (if lemon was added) "Lemon", and (if sweet) "Cane Sugar".
+
+### JurrasicJava Class (10 points)
+Implement a class to represent the JurrasicJava, that inherits from the Drink class.  Unlike other drinks, it should default to **Ice** as false.  It should also implement properties for **RoomForCream** (bool, default false), **Decaf** (bool, default false).  It should also implement a method **LeaveRoomForCream()** and **AddIce()**. Its price is **$.59** (small), **$.99** (medium), and **$1.49** (large) and calories are **2** (small), **4** (medium), and **8** (large).  Its ingredients should be "Water" and "Coffee".
+
+### Water Class (5 points)
+Implement a class to represent a glass of water that inherits from the Drink base class.  It should have property **Lemon** (bool, default false), and a **AddLemon()** method.  The Water class should have a price of **$0.10** and **0** calories for all sizes.  Its ingredients should be "Water" and (if lemon was added) "Lemon".
+
+### SodaSaurus Test Class (10 points)
+Implement a test class that tests:
+1. The ability to set each possible flavor
+2. The correct default price, calories, ice, and size
+3. The correct price and calories after changing to small, medium, and large sizes.
+4. That invoking HoldIce() results in the Ice property being false.
+
+### Tyrannotea Test Class (10 points)
+Implement a test class that tests:
+1. The correct default price, calories, ice, size, lemon, and sweet properties.
+2. The correct price and calories after changing to small, medium, and large sizes.
+3. That invoking HoldIce() results in the Ice property being false
+4. That invoking AddLemon() sets results in the Lemon property being true.
+5. That setting the sweet property to true results in the right calories for each size
+6. That setting the sweet property to false (after it has been set to true) results in the right calories for each size.
+
+### JurrasicJava test Class (10 points)
+Implement a test class that tests:
+1. The correct default price, calories, ice, size, and SpaceForCream properties.
+2. The correct price and calories after changing to small, medium, and large sizes.
+3. That invoking HoldIce() results in the Ice property being false
+4. That invoking LeaveSpaceForCream() results in the SpaceForCream property being true.
+
+### Water Test Class (5 points)
+Implement a test class that tests:
+1. The correct default price, calories, ice, size, and lemon properties.
+2. The correct price and calories after changing to small, medium, and large sizes.
+3. That invoking HoldIce() results in the Ice property being false
+4. That invoking AddLemon() sets results in the Lemon property being true.
