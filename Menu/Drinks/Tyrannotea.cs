@@ -7,6 +7,16 @@ namespace DinoDiner.Menu.Drinks
     public class Tyrannotea : Drink
     {
         /// <summary>
+        /// Determines if sweet or not.
+        /// </summary>
+        public bool Sweet { get; set; } = false;
+
+        /// <summary>
+        /// Determine if the tea has a lemon.
+        /// </summary>
+        public bool Lemon { get; set; } = false;
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         public Tyrannotea()
@@ -45,7 +55,16 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Holds the ingredients
         /// </summary>
-        public override List<string> Ingredients { get; } = new List<string> { "Water", "Tea", "Cane Sugar" };
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string> { "Water", "Tea"};
+                if (Sweet) ingredients.Add("Cane Sugar");
+                if (Lemon) ingredients.Add("Lemon");
+                return ingredients;
+            }
+        }
 
     }
 }
