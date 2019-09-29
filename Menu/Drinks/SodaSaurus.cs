@@ -59,13 +59,6 @@ namespace DinoDiner.Menu.Drinks
         /// Holds the ingredients
         /// </summary>
         public override List<string> Ingredients { get; } = new List<string> { "Water", "Natural Flavors", "Cane Sugar" };
-
-
-        /// <summary>
-        /// Manages ice (default true).
-        /// </summary>
-        public bool Ice { get; set; } = true;
-
     }
 }
 

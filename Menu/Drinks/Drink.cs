@@ -29,6 +29,16 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size { get; set; } = Size.Small;
+
+        /// <summary>
+        /// Manages ice (default true).
+        /// </summary>
+        public bool Ice { get; set; } = true;
+
+        public void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }

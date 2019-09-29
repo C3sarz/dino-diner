@@ -4,24 +4,25 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Tyrannotea : Drink
+    /// <summary>
+    /// Manages the JurassicJava coffee.
+    /// </summary>
+    public class JurrasicJava : Drink
     {
         /// <summary>
-        /// Determines if sweet or not.
+        /// Determines if room is left for the cream.
         /// </summary>
-        public bool Sweet { get; set; } = false;
+        public bool RoomForCream { get; set; } = false;
 
         /// <summary>
-        /// Determine if the tea has a lemon.
+        /// Determines if the coffee had caffeine removed.
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Decaf { get; set; } = false;
 
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public Tyrannotea()
+        public JurrasicJava()
         {
             this.Size = Size.Small;
+            this.Ice = false;
         }
 
         /// <summary>
@@ -35,21 +36,20 @@ namespace DinoDiner.Menu.Drinks
                 size = value;
                 if (size == Size.Small)
                 {
-                    Price = 0.99;
-                    Calories = 8;
+                    Price = 0.59;
+                    Calories = 2;
                 }
 
                 else if (size == Size.Medium)
                 {
-                    Price = 1.49;
-                    Calories = 16;
+                    Price = 0.99;
+                    Calories = 4;
                 }
                 else if (size == Size.Large)
                 {
-                    Price = 1.99;
-                    Calories = 32;
+                    Price = 1.49;
+                    Calories = 8;
                 }
-                if (Sweet) Calories = 2 * Calories;
             }
         }
 
@@ -60,20 +60,25 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                List<string> ingredients = new List<string> { "Water", "Tea"};
-                if (Sweet) ingredients.Add("Cane Sugar");
-                if (Lemon) ingredients.Add("Lemon");
+                List<string> ingredients = new List<string> { "Water", "Coffee" };
                 return ingredients;
             }
         }
 
         /// <summary>
-        /// Adds a lemon.
+        /// Adds room for cream.
         /// </summary>
-        public void AddLemon()
+        public void LeaveRoomForCream()
         {
-            Lemon = true;
+            RoomForCream = true;
         }
 
+        /// <summary>
+        /// Adds ice to the coffee.
+        /// </summary>
+        public void AddIce()
+        {
+            Ice = true;
+        }
     }
 }
