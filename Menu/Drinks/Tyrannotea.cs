@@ -6,10 +6,20 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
+        private bool sweet = false;
         /// <summary>
         /// Determines if sweet or not.
         /// </summary>
-        public bool Sweet { get; set; } = false;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                if (value && !sweet) Calories = 2 * Calories;
+                else if (!value && sweet) Calories = Calories / 2;
+                sweet = value;
+            }
+        }
 
         /// <summary>
         /// Determine if the tea has a lemon.
@@ -60,7 +70,7 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                List<string> ingredients = new List<string> { "Water", "Tea"};
+                List<string> ingredients = new List<string> { "Water", "Tea" };
                 if (Sweet) ingredients.Add("Cane Sugar");
                 if (Lemon) ingredients.Add("Lemon");
                 return ingredients;

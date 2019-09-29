@@ -5,6 +5,10 @@
     <RootNamespace>DinoDiner.Menu</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\cesar\Source\Repos\dino-diner\Menu\Menu.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Milestones\" />
   </ItemGroup>

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Drink base class.
+    /// </summary>
     public abstract class Drink
     {
         /// <summary>
@@ -36,6 +39,9 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public bool Ice { get; set; } = true;
 
+        /// <summary>
+        /// Removes the ice.
+        /// </summary>
         public void HoldIce()
         {
             Ice = false;
