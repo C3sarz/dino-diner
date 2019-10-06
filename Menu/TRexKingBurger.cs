@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: TRexKingBurger.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the King burger.
@@ -97,6 +100,15 @@ namespace DinoDiner.Menu.Entrees
         public void HoldTomato()
         {
             _tomato = false;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

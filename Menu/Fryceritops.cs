@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: Fryceritops.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -15,16 +18,20 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public Fryceritops()
         {
-            this.ingredients.Add("Potato");
-            this.ingredients.Add("Salt");
-            this.ingredients.Add("Vegetable Oil");
             Size = Size.Small;
         }
 
-        private List<string> ingredients = new List<string>();
+
         public override List<string> Ingredients
         {
-            get { return ingredients; }
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+                return ingredients;
+            }
         }
 
         /// <summary>
@@ -57,6 +64,28 @@ namespace DinoDiner.Menu.Sides
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string result = "";
+            switch (Size)
+            {
+                case Size.Large:
+                    result = "Large ";
+                    break;
+                case Size.Medium:
+                    result = "Medium ";
+                    break;
+                case Size.Small:
+                    result = "Small ";
+                    break;
+            }
+            return (result += "Friceritops");
         }
     }
 }

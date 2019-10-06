@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: Velociwrap.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the VelociWrap.
@@ -55,6 +58,15 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             _cheese = false;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

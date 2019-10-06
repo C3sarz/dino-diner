@@ -1,13 +1,16 @@
-﻿using System;
+﻿/* Class: Side.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Size enum.
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
 
         /// <summary>

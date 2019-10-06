@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: PterodactylWings.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the Pterodactyl Wings entree.
@@ -25,6 +28,15 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 7.21;
             this.Calories = 318;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
         }
     }
 }

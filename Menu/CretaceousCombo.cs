@@ -1,16 +1,24 @@
-﻿using System;
+﻿/* Class: CretaceousCombo.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    /// <summary>
+    /// Manages the combo class.
+    /// </summary>
+    public class CretaceousCombo : IMenuItem
     {
         public Entree Entree { get; set; }
         private Side side;
+
+        /// <summary>
+        /// Handles the side.
+        /// </summary>
         public Side Side
         {
             get { return side; }
@@ -20,8 +28,14 @@ namespace DinoDiner.Menu
                 side.Size = size;
             }
         }
+        /// <summary>
+        /// Handles the drink of choice.
+        /// </summary>
         public Drink Drink { get; set; }
 
+        /// <summary>
+        /// Handles the price.
+        /// </summary>
         public double Price
         {
             get
@@ -30,6 +44,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Handles the calories.
+        /// </summary>
         public uint Calories
         {
             get
@@ -40,6 +57,9 @@ namespace DinoDiner.Menu
 
         private Size size = Size.Small; // private backing variable
 
+        /// <summary>
+        /// Handles the size.
+        /// </summary>
         public Size Size
         {
             get { return size; }
@@ -51,6 +71,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Handles the ingredient list.
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -63,12 +86,26 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="entree"></param>
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
 
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string result = Entree.ToString();
+            return (result += " Combo");
         }
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MenuTest</name>
+    </assembly>
+    <members>
+        <member name="T:DinoDiner.MenuTest.Drinks.SodasaurusTest">
+            <summary>
+            Tests the SodaSaurus drink.
+            </summary>
+        </member>
+    </members>
+</doc>

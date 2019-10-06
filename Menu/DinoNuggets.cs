@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: DinoNuggets.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the Dino Nuggets entree.
@@ -41,6 +44,15 @@ namespace DinoDiner.Menu.Entrees
             this.Price += 0.25;
             _nuggetNumber++;
             this.Calories += 59;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

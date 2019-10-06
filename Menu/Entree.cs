@@ -1,13 +1,16 @@
-﻿using System;
+﻿/* Class: Entree.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Blueprint for the entrees.
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
 
         /// <summary>

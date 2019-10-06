@@ -1,4 +1,4 @@
-﻿/* Class: Size.cs
+﻿/* Class: Menu.cs
 * Author: Cesar Zavala
 */
 using System;
@@ -8,12 +8,11 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Handles the sizes.
+    /// Manages the Menu and all its items.
     /// </summary>
-    public enum Size
+    public class Menu
     {
-        Small,
-        Medium,
-        Large
+
+
     }
 }

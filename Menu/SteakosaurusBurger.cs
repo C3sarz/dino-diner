@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: SteakosaurusBurger.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the Burger.
@@ -65,6 +68,15 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             _mustard = false;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

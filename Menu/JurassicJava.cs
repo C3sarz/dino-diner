@@ -1,13 +1,16 @@
-﻿using System;
+﻿/* Class: JurassicJava.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the JurassicJava coffee.
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// Determines if room is left for the cream.
@@ -19,7 +22,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public bool Decaf { get; set; } = false;
 
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Size = Size.Small;
             this.Ice = false;
@@ -79,6 +82,29 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             Ice = true;
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string result = "";
+            switch (Size)
+            {
+                case Size.Large:
+                    result = "Large ";
+                    break;
+                case Size.Medium:
+                    result = "Medium ";
+                    break;
+                case Size.Small:
+                    result = "Small ";
+                    break;
+            }
+            if (Decaf) result += "Decaf ";
+            return (result += "Jurassic Java");
         }
     }
 }

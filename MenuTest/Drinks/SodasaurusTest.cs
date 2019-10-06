@@ -1,5 +1,4 @@
 ﻿using DinoDiner.Menu;
-using DinoDiner.Menu.Drinks;
 using Xunit;
 
 namespace DinoDiner.MenuTest.Drinks

@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: Brontowurst.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Manages the Brontowurst entree.
@@ -55,5 +58,13 @@ namespace DinoDiner.Menu.Entrees
             _onions = false;
         }
 
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Brontowurst";
+        }
     }
 }

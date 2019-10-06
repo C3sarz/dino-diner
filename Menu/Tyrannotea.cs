@@ -1,8 +1,11 @@
-﻿using System;
+﻿/* Class: Tyrannotea.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class Tyrannotea : Drink
     {
@@ -85,5 +88,27 @@ namespace DinoDiner.Menu.Drinks
             Lemon = true;
         }
 
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string result = "";
+            switch (Size)
+            {
+                case Size.Large:
+                    result = "Large ";
+                    break;
+                case Size.Medium:
+                    result = "Medium ";
+                    break;
+                case Size.Small:
+                    result = "Small ";
+                    break;
+            }
+            if (sweet) result += "Sweet ";
+            return (result += "Tyrannotea");
+        }
     }
 }
