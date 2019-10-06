@@ -250,6 +250,12 @@
             Manages the Menu and all its items.
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Menu.ToString">
+            <summary>
+            Override the ToString method.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.MeteorMacAndCheese">
             <summary>
             Manages the Meteor MnC side.

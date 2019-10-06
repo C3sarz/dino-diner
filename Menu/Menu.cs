@@ -12,7 +12,99 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
+        /// <summary>
+        /// Returns all menu items.
+        /// </summary>
+        List<IMenuItem> AvailableMenuItems
+        {
+            get
+            {
+                List<IMenuItem> items = new List<IMenuItem>();
+                items.AddRange(AvailableEntrees);
+                items.AddRange(AvailableSides);
+                items.AddRange(AvailableDrinks);
+                items.AddRange(AvailableCombos);
+                return items;
+            }
+        }
 
+        /// <summary>
+        /// Returns all available entrees.
+        /// </summary>
+        List<IMenuItem> AvailableEntrees
+        {
+            get
+            {
+                List<IMenuItem> entrees = new List<IMenuItem>();
+                entrees.Add(new Brontowurst());
+                entrees.Add(new DinoNuggets());
+                entrees.Add(new PterodactylWings());
+                entrees.Add(new VelociWrap());
+                entrees.Add(new TRexKingBurger());
+                entrees.Add(new SteakosaurusBurger());
+                entrees.Add(new PrehistoricPBJ());
+                return entrees;
+            }
+        }
 
+        /// <summary>
+        /// Returns all availablew sides.
+        /// </summary>
+        List<IMenuItem> AvailableSides
+        {
+            get
+            {
+                List<IMenuItem> sides = new List<IMenuItem>();
+                sides.Add(new Fryceritops());
+                sides.Add(new MeteorMacAndCheese());
+                sides.Add(new MezzorellaSticks());
+                sides.Add(new Triceritots());
+                return sides;
+            }
+        }
+
+        /// <summary>
+        /// Returns all available drinks.
+        /// </summary>
+        List<IMenuItem> AvailableDrinks
+        {
+            get
+            {
+                List<IMenuItem> drinks = new List<IMenuItem>();
+                drinks.Add(new JurassicJava());
+                drinks.Add(new Sodasaurus());
+                drinks.Add(new Tyrannotea());
+                drinks.Add(new Water());
+                return drinks;
+            }
+        }
+
+        /// <summary>
+        /// Returns all available combos.
+        /// </summary>
+        List<IMenuItem> AvailableCombos
+        {
+            get
+            {
+                List<IMenuItem> combos = new List<IMenuItem>();
+                combos.Add(new CretaceousCombo(new TRexKingBurger()));
+                return combos;
+            }
+        }
+
+        /// <summary>
+        /// Override the ToString method.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(IMenuItem item in AvailableMenuItems)
+            {
+                sb.Append(item.ToString());
+                sb.Append("\n");
+            }
+            return sb.ToString();
+        }
     }
 }
