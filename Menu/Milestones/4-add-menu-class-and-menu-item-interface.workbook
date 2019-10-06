@@ -1,0 +1,43 @@
+﻿---
+uti: com.xamarin.workbook
+id: 14dcd7b3-c0db-4702-871d-c8b431da2a8e
+title: 1-add-entree-classes
+platforms:
+- WPF
+packages:
+- id: xunit
+  version: 2.4.1
+---
+
+# Menu Milestone 4
+
+## Add Menu Class and MenuItem Interface
+
+Now that we have the majority of the menu items built for DinoDiner, it's time to write a few classes that pull them together.  These will be the Menu class (which represents all items currently available) and the MenuItem interface - an interface that all menu items should support.
+
+## General Requirements
+You will need to follow the provided style guide.
+
+You should move all Entrees, Sides, Drinks, and Combos into the DinoDiner.Menu namespace (they can still be kept in separate folders for organization, if you so desire).  You may also need to modify the `using` statements in your tests as a result.
+
+Your classes should continue to pass _ALL_ existing tests after any refactoring.  In addition, several new tests will be added to the upstream repository, which your classes should _ALSO_ pass.
+
+## MenuItem Interface (20 points)
+
+You will need to create an interface in the DinoDiner.Menu namespace, IMenuItem, that requires a property with a getter for `Price` (double), `Calories` (uint), and `Ingredients` (a List<string>).
+
+## MenuItem Implementation (20 points)
+
+Entrees, Sides, Drinks, and Combos will need to be refactored to implement the IMenuItem interface.
+
+## ToString() Implementation (20 points)
+
+You will also need to refactor all menu items by overriding the `ToString()` method to return the name of the item, i.e. DinoNuggets' `ToString()` method should return the string `"Dino-Nuggets"`.  In most cases, the name of the menu item is the class name with spaces added; however, some are a bit different, i.e. "Prehistoric PB&J" and "T-Rex King Burger".  The names you should use can be found in the upstream MenuItemNameTest.cs file.
+
+## Menu Class (40 points)
+
+You will also need to define a Menu class in the DinoDiner.Menu namespace which provides a property with a getter for `AvailableMenuItems` (List<MenuItem>) which should return a list containing one instance of every menu item currently offered by DinoDiner.
+
+It should also implement a property with a getter to return all available entrees (`AvailableEntrees`), sides (`AvailableSides`), drinks (`AvailableDrinks`), and combos (`AvailableCombos`).
+
+It should also override the `ToString()` method to display the full menu contents, separated by new line characters (`\n`).
