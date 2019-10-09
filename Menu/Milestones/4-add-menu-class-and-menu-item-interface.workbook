@@ -32,7 +32,13 @@ Entrees, Sides, Drinks, and Combos will need to be refactored to implement the I
 
 ## ToString() Implementation (20 points)
 
-You will also need to refactor all menu items by overriding the `ToString()` method to return the name of the item, i.e. DinoNuggets' `ToString()` method should return the string `"Dino-Nuggets"`.  In most cases, the name of the menu item is the class name with spaces added; however, some are a bit different, i.e. "Prehistoric PB&J" and "T-Rex King Burger".  The names you should use can be found in the upstream MenuItemNameTest.cs file.
+You will also need to refactor all menu items by overriding the `ToString()` method to return the name of the item, i.e. DinoNuggets' `ToString()` method should return the string `"Dino-Nuggets"`.  
+
+In most cases, the name of the menu item is the class name with spaces added; however, some are a bit different, i.e. "Prehistoric PB&J" and "T-Rex King Burger".  
+
+Additionally, Sides and Drinks should indicate thier size, i.e. "Large Triceritots", "Small Meteor Mac and Cheese", "Medium Water".  Sodasaurus should also indicate flavor, i.e. "Large Cherry Sodasaurus", and JurrasicJava and Tyrannotea should include "Decaf" and "Sweet" when they apply.
+
+The full specification for names can be found in the upstream MenuItemNameTest.cs file.  Your project should pass all the tests contained there.
 
 ## Menu Class (40 points)
 

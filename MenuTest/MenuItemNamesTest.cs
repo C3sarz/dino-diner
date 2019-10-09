@@ -70,11 +70,11 @@ namespace MenuTest
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
         [InlineData(Size.Large)]
-        public void FriceritopsToStringShouldGiveNameForSize(Size size)
+        public void FryceritopsToStringShouldGiveNameForSize(Size size)
         {
             Fryceritops ft = new Fryceritops();
             ft.Size = size;
-            Assert.Equal($"{size} Friceritops", ft.ToString());
+            Assert.Equal($"{size} Fryceritops", ft.ToString());
         }
 
         [Theory]
