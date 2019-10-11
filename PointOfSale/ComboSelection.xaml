@@ -12,15 +12,45 @@
         <WrapPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="MinWidth" Value="140"/>
-                <Setter Property="Height" Value="200"/>
-            </Style>            
+                <Setter Property="Height" Value="160"/>
+            </Style>
         </WrapPanel.Resources>
-        <Button>Brondowurst Combo</Button>
-        <Button>Dino-Nuggets Combo</Button>
-        <Button>T-Rex King Burger Combo</Button>
-        <Button>Prehistoric PB&amp;J Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>Veloci-Wrap Combo</Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+            </Button.Background>
+            Brondowurst Combo
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-02.png"/>
+                <TextBlock >Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
+            </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-06.png"/>
+                <TextBlock >T-Rex King Burger Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-03.png"/>
+                <TextBlock >Prehistoric PB&amp;J Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-04.png"/>
+                <TextBlock >Pterodactyl Wings Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-07.png"/>
+                <TextBlock >Veloci-Wrap Combo</TextBlock>
+            </StackPanel>
+        </Button>
     </WrapPanel>
     
 </Page>
