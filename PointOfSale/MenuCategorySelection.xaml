@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <Button Click="SelectCombo"  Grid.Row="0" Grid.Column="0">Combos</Button>
         <Button Grid.Row="0" Grid.Column="1">Entrees</Button>
-        <Button Grid.Row="1" Grid.Column="0">Sides</Button>
-        <Button Grid.Row="1" Grid.Column="1">Drink</Button>
+        <Button Click="SelectSide" Grid.Row="1" Grid.Column="0">Sides</Button>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="1">Drink</Button>
     </Grid>
 </Page>

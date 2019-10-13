@@ -250,6 +250,31 @@
             Manages the Menu and all its items.
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableMenuItems">
+            <summary>
+            Returns all menu items.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableEntrees">
+            <summary>
+            Returns all available entrees.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableSides">
+            <summary>
+            Returns all availablew sides.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableDrinks">
+            <summary>
+            Returns all available drinks.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableCombos">
+            <summary>
+            Returns all available combos.
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.Menu.ToString">
             <summary>
             Override the ToString method.

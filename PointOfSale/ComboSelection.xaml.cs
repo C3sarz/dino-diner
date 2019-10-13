@@ -24,5 +24,10 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void CustomizeCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo());
+        }
     }
 }
