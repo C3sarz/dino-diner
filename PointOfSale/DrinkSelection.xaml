@@ -55,14 +55,23 @@
         </Button>
 
         <Button  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="150">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/trex.jpg"/>
+            </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Large</Bold></TextBlock>
         </Button>
 
         <Button  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Width="150">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/mediumDino2.png"/>
+            </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Medium</Bold></TextBlock>
         </Button>
 
         <Button  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="150">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/smolDino.jpg"/>
+            </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Small</Bold></TextBlock>
         </Button>
 

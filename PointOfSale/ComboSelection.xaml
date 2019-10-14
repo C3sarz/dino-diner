@@ -8,49 +8,70 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ComboSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="140"/>
-                <Setter Property="Height" Value="160"/>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="CustomizeCombo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="30">Combo Selection</TextBlock>
+
+        <Button Click="CustomizeCombo"  Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
-            Brondowurst Combo
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Brontowurst Combo</TextBlock>
         </Button>
-        <Button Click="CustomizeCombo">
-            <StackPanel>
-                <Image Width="100" Source="Assets/DinoDiner-02.png"/>
-                <TextBlock >Dino-Nuggets Combo</TextBlock>
-            </StackPanel>
-            </Button>
-        <Button Click="CustomizeCombo">
-            <StackPanel>
-                <Image Width="100" Source="Assets/DinoDiner-06.png"/>
-                <TextBlock >T-Rex King Burger Combo</TextBlock>
-            </StackPanel>
+
+        <Button Click="CustomizeCombo" Grid.Row="1" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Dino-Nuggets Combo</TextBlock>
         </Button>
-        <Button Click="CustomizeCombo">
-            <StackPanel>
-                <Image Width="100" Source="Assets/DinoDiner-03.png"/>
-                <TextBlock >Prehistoric PB&amp;J Combo</TextBlock>
-            </StackPanel>
+
+        <Button Click="CustomizeCombo" Grid.Row="1" Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Prehistoric PB&amp;J Combo</TextBlock>
         </Button>
-        <Button Click="CustomizeCombo">
-            <StackPanel>
-                <Image Width="100" Source="Assets/DinoDiner-04.png"/>
-                <TextBlock >Pterodactyl Wings Combo</TextBlock>
-            </StackPanel>
+
+        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Pterodactyl Wings Combo</TextBlock>
         </Button>
-        <Button Click="CustomizeCombo">
-            <StackPanel>
-                <Image Width="100" Source="Assets/DinoDiner-07.png"/>
-                <TextBlock >Veloci-Wrap Combo</TextBlock>
-            </StackPanel>
+
+        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Steakosaurus Burger Combo</TextBlock>
         </Button>
-    </WrapPanel>
-    
+
+        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">T-Rex Kingburger Combo</TextBlock>
+        </Button>
+
+        <Button Click="CustomizeCombo" Grid.Row="3" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Veloci-Wrap COmbo</TextBlock>
+        </Button>
+
+    </Grid>
+
 </Page>

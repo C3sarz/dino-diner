@@ -20,7 +20,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="2" Grid.Column="0" BorderThickness="4" HorizontalAlignment="Center" Width="210">
+        <Button Click="CustomizeSide" Grid.Row="2" Grid.Column="0" BorderThickness="4" HorizontalAlignment="Center" Width="210">
             <TextBlock FontSize="20" Foreground="Black"><Bold>Selected Side</Bold></TextBlock>
         </Button>
         <Button Click="Drinks" Grid.Row="2" Grid.Column="1" BorderThickness="4" HorizontalAlignment="Center" Width="210">

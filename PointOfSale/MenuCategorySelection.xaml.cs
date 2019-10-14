@@ -40,5 +40,10 @@ namespace PointOfSale
             NavigationService.Navigate(new SideSelection());
         }
 
+        private void SelectEntree(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new EntreeSelection());
+        }
+
     }
 }
