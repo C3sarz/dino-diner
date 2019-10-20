@@ -106,5 +106,27 @@ namespace DinoDiner.Menu
             if (Decaf) result += "Decaf ";
             return (result += "Jurassic Java");
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Room for Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
+            }
+        }
     }
 }

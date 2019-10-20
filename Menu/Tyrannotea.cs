@@ -110,5 +110,27 @@ namespace DinoDiner.Menu
             if (sweet) result += "Sweet ";
             return (result += "Tyrannotea");
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
     }
 }

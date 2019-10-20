@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Blueprint for the entrees.
     /// </summary>
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem
     {
 
         /// <summary>
@@ -30,5 +30,15 @@ namespace DinoDiner.Menu
         {
             get;
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

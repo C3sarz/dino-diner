@@ -12,13 +12,13 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the combo class.
     /// </summary>
-    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged,IOrderItem
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyOnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName))
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private Entree entree;
@@ -142,21 +142,28 @@ namespace DinoDiner.Menu
             return (result += " Combo");
         }
 
+        /// <summary>
+        /// Item description.
+        /// </summary>
         public string Description
         {
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
         public string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-                special.AddRange(Entree.Special);   //special proprerty of entree not yet implemented.
-                special.Add(Side.Description);  //not implemented!
-                special.AddRange(Side.Special); //not implemented!
-                special.Add(Drink.Description); //not implemented!
-                special.AddRange(Drink.Special);    //not implemented!
+                special.AddRange(Entree.Special);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.Description);
+                special.AddRange(Drink.Special);
+                return special.ToArray();
             }
         }
     }

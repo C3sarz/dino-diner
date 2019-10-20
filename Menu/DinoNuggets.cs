@@ -54,5 +54,30 @@ namespace DinoDiner.Menu
         {
             return "Dino-Nuggets";
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if(_nuggetNumber > 6)
+                {
+                    string result = (_nuggetNumber - 6) + " Extra Nuggets";
+                    special.Add(result);
+                }
+                return special.ToArray();
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Drink base class.
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem,IOrderItem
     {
         /// <summary>
         /// Keeps the size.
@@ -49,5 +49,15 @@ namespace DinoDiner.Menu
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

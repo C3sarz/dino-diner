@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Size enum.
     /// </summary>
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem,IOrderItem
     {
 
         /// <summary>
@@ -38,5 +38,14 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual Size Size { get; set; }
 
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

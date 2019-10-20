@@ -66,5 +66,28 @@ namespace DinoDiner.Menu
         {
             return "Brontowurst";
         }
+
+        /// <summary>
+        /// Item description.
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Array of special properties of the item.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!_bun) special.Add("Hold Bun");
+                if (!_onions) special.Add("Hold Onion");
+                if (!_peppers) special.Add("Hold Peppers");
+                return special.ToArray();
+            }
+        }
     }
 }
