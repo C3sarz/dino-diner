@@ -35,10 +35,10 @@ namespace DinoDiner.Menu
             protected set
             {
                 entree = value;
-                entree.PropertyChanged += (object sender, PropertyChangedEventArgs args)
-                {
-                    NotifyOnPropertyChanged(args.PropertyName);
-                };
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
         private Side side;
@@ -53,6 +53,10 @@ namespace DinoDiner.Menu
             {
                 side = value;
                 side.Size = size;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -65,10 +69,10 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
-                NotifyOnPropertyChanged("Ingredients");
-                NotifyOnPropertyChanged("Special");
-                NotifyOnPropertyChanged("Price");
-                NotifyOnPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -107,8 +111,10 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = size;
                 Side.Size = size;
-                NotifyOnPropertyChanged("Special");
-                NotifyOnPropertyChanged("Size");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 

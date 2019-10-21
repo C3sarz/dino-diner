@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the King burger.
     /// </summary>
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, INotifyPropertyChanged
     {
         private bool _ketchup = true;
         private bool _lettuce = true;
@@ -70,6 +70,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             _ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the lettuce.
@@ -77,6 +79,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             _lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the mayo.
@@ -84,6 +88,8 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             _mayo = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the mustard.
@@ -91,6 +97,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             _mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the bun.
@@ -98,6 +106,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             _bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the onion.
@@ -105,6 +115,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             _onion = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the pickle.
@@ -112,6 +124,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             _pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Holds the tomato.
@@ -119,6 +133,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             _tomato = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

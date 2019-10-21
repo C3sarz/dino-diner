@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Size enum.
     /// </summary>
-    public abstract class Side : IMenuItem,IOrderItem
+    public abstract class Side : IMenuItem,IOrderItem, INotifyPropertyChanged
     {
 
         /// <summary>

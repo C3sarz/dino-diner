@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Drink base class.
     /// </summary>
-    public abstract class Drink : IMenuItem,IOrderItem
+    public abstract class Drink : IMenuItem,IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Keeps the size.
@@ -49,6 +49,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the Burger.
     /// </summary>
-    public class SteakosaurusBurger : Entree
+    public class SteakosaurusBurger : Entree, INotifyPropertyChanged
     {
         private bool _bun = true;
         private bool _pickle = true;
@@ -63,6 +63,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             _bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -71,6 +73,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             _pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -79,6 +83,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             _ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -87,6 +93,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             _mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, INotifyPropertyChanged
     {
         private bool sweet = false;
 
@@ -33,10 +33,11 @@ namespace DinoDiner.Menu
         {
             get { return sweet; }
             set
-            {
+            {                
                 if (value && !sweet) Calories = 2 * Calories;
                 else if (!value && sweet) Calories = Calories / 2;
                 sweet = value;
+                NotifyOfPropertyChanged("Ingredients");
             }
         }
 
@@ -79,6 +80,9 @@ namespace DinoDiner.Menu
                     Calories = 32;
                 }
                 if (Sweet) Calories = 2 * Calories;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -102,6 +106,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

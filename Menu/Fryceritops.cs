@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the Fryceritops side.
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor.
@@ -33,7 +33,11 @@ namespace DinoDiner.Menu
         /// <param name="propertyName">Name of changing property.</param>
         protected void NotifyOfPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         /// <summary>
@@ -80,6 +84,9 @@ namespace DinoDiner.Menu
                         this.Calories = 222;
                         break;
                 }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -102,7 +109,7 @@ namespace DinoDiner.Menu
                     result = "Small ";
                     break;
             }
-            return (result += "Friceritops");
+            return (result += "Fryceritops");
         }
 
         /// <summary>

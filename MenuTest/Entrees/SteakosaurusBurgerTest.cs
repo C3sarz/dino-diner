@@ -95,7 +95,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldKetchup();
             Assert.Collection<string>(sb.Special,
-                item => Assert.Equal("Hold Ketchup", item);
+                item => Assert.Equal("Hold Ketchup", item));
         }
 
         [Fact]
@@ -114,6 +114,16 @@ namespace MenuTest.Entrees
             sb.HoldPickle();
             Assert.Collection<string>(sb.Special,
                 item => Assert.Equal("Hold Pickle", item));
+        }
+
+        [Fact]
+        public void HoldingShouldNotifySpecialChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special", () => sb.HoldBun());
+            Assert.PropertyChanged(sb, "Special", () => sb.HoldPickle());
+            Assert.PropertyChanged(sb, "Special", () => sb.HoldKetchup());
+            Assert.PropertyChanged(sb, "Special", () => sb.HoldMustard());
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the PrehistoricPBJ entree.
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -61,8 +61,8 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
-            NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
         }
 
         /// <summary>

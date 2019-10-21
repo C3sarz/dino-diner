@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the regular water drink.
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Determine if the tea has a lemon.
@@ -65,6 +65,9 @@ namespace DinoDiner.Menu
                 size = value;
                 this.Price = 0.10;
                 this.Calories = 0;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -74,6 +77,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

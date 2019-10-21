@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the MSticks
     /// </summary>
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Default constructor.
@@ -81,6 +81,9 @@ namespace DinoDiner.Menu
                         Calories = 999;
                         break;
                 }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 

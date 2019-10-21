@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the Dino Nuggets entree.
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, INotifyPropertyChanged
     {
         private uint _nuggetNumber;
 
@@ -63,6 +63,8 @@ namespace DinoDiner.Menu
             this.Price += 0.25;
             _nuggetNumber++;
             this.Calories += 59;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

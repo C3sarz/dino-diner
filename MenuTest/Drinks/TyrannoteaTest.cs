@@ -193,7 +193,7 @@ namespace DinoDiner.MenuTest.Drinks
             tea.HoldIce();
             Assert.Collection<string>(tea.Special,
                 item => Assert.Equal("Add Lemon", item),
-                item => Assert.Equal("Add Ice", item));
+                item => Assert.Equal("Hold Ice", item));
         }
 
         [Fact]
@@ -206,12 +206,28 @@ namespace DinoDiner.MenuTest.Drinks
         }
 
         [Fact]
-        public void SpecialShouldContainAddIce()
+        public void SpecialShouldContainHoldIce()
         {
             Tyrannotea tea = new Tyrannotea();
             tea.HoldIce();
             Assert.Collection<string>(tea.Special,
-                item => Assert.Equal("Add Ice", item));
+                item => Assert.Equal("Hold Ice", item));
+        }
+
+        [Fact]
+        public void SetSizeNotifyChanges()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Size", () => tea.Size = Size.Large);
+            Assert.PropertyChanged(tea, "Calories", () => tea.Size = Size.Large);
+            Assert.PropertyChanged(tea, "Price", () => tea.Size = Size.Large);
+        }
+
+        [Fact]
+        public void SpecialNotifyChanges()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special", () => tea.AddLemon());
         }
     }
 }

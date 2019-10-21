@@ -137,5 +137,14 @@ namespace DinoDiner.MenuTest.Drinks
             Assert.Collection<string>(soda.Special,
                 item => Assert.Equal("Hold Ice", item));
         }
+
+        [Fact]
+        public void SetSizeNotifyChanges()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Size", () => soda.Size = Size.Large);
+            Assert.PropertyChanged(soda, "Calories", () => soda.Size = Size.Large);
+            Assert.PropertyChanged(soda, "Price", () => soda.Size = Size.Large);
+        }
     }
 }

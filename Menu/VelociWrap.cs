@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the VelociWrap.
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, INotifyPropertyChanged
     {
         private bool _dressing = true;
         private bool _lettuce = true;
@@ -61,6 +61,8 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             _dressing = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -69,6 +71,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             _lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -77,6 +81,8 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             _cheese = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

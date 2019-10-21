@@ -127,7 +127,7 @@ namespace DinoDiner.MenuTest.Drinks
             JurassicJava coffee = new JurassicJava();
             coffee.LeaveRoomForCream();
             Assert.Collection<string>(coffee.Special,
-            item => Assert.Equal("Room For Cream", item));
+            item => Assert.Equal("Room for Cream", item));
         }
 
         [Fact]
@@ -146,10 +146,33 @@ namespace DinoDiner.MenuTest.Drinks
             coffee.LeaveRoomForCream();
             coffee.AddIce();
             Assert.Collection<string>(coffee.Special,
-                item => Assert.Equal("Room For Cream", item),
+                item => Assert.Equal("Room for Cream", item),
                 item => Assert.Equal("Add Ice", item));
         }
 
+        [Fact]
+        public void SetSizeNotifyChanges()
+        {
+            JurassicJava coffee = new JurassicJava();
+            Assert.PropertyChanged(coffee, "Size", () => coffee.Size = Size.Large);
+            Assert.PropertyChanged(coffee, "Calories", () => coffee.Size = Size.Large);
+            Assert.PropertyChanged(coffee, "Price", () => coffee.Size = Size.Large);
+        }
+
+        [Fact]
+        public void RoomForCreamNotifyChanges()
+        {
+            JurassicJava coffee = new JurassicJava();
+            Assert.PropertyChanged(coffee, "Ingredients", () => coffee.LeaveRoomForCream());
+            Assert.PropertyChanged(coffee, "Special", () => coffee.LeaveRoomForCream());
+        }
+
+        [Fact]
+        public void AddIceNotifyChanges()
+        {
+            JurassicJava coffee = new JurassicJava();
+            Assert.PropertyChanged(coffee, "Special", () => coffee.AddIce());
+        }
     }
 }
 

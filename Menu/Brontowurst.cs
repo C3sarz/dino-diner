@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Manages the Brontowurst entree.
     /// </summary>
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, INotifyPropertyChanged
     {
         private bool _bun = true;
         private bool _peppers = true;
@@ -31,7 +31,10 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public override List<string> Ingredients  
+        /// <summary>
+        /// Ingredient list
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -56,7 +59,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-        _bun = false;
+            _bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Removes the peppers.
@@ -64,6 +69,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             _peppers = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Removes the onions.
@@ -71,6 +78,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             _onions = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

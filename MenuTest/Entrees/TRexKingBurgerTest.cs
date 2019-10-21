@@ -200,7 +200,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldTomato();
             Assert.Collection<string>(trex.Special,
-                item => Assert.Equal("Hold Tomato", item),
+                item => Assert.Equal("Hold Tomato", item)
                 );
         }
 
@@ -212,6 +212,20 @@ namespace MenuTest.Entrees
             Assert.Collection<string>(trex.Special,
                 item => Assert.Equal("Hold Onion", item)
                 );
+        }
+        
+        [Fact]
+        public void HoldingShouldNotifySpecialChange()
+        {
+            TRexKingBurger trex = new TRexKingBurger();
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldBun());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldPickle());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldKetchup());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldMustard());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldMayo());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldOnion());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldTomato());
+            Assert.PropertyChanged(trex, "Special", () => trex.HoldLettuce());
         }
     }
 }

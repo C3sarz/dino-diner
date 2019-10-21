@@ -101,25 +101,19 @@ namespace MenuTest.Entrees
             });
         }
 
-        //[Fact]
-        //public void HoldingPeanutButterShouldNotifySpeacialChange()
-        //{
-        //    PrehistoricPBJ pbj = new PrehistoricPBJ();
-        //    Assert.PropertyChanged(pbj, "Special", () =>
-        //     {
-        //         pbj.HoldPeanutButter();
-        //     });
-        //}
+        [Fact]
+        public void HoldingPeanutButterShouldNotifySpecialChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () => Assert.PropertyChanged(pbj, "Special", () => pbj.HoldPeanutButter()));
+        }
 
-        //[Fact]
-        //public void HoldingJellyShouldNotifySpeacialChange()
-        //{
-        //    PrehistoricPBJ pbj = new PrehistoricPBJ();
-        //    Assert.PropertyChanged(pbj, "Special", () =>
-        //    {
-        //        pbj.HoldJelly();
-        //    });
-        //}
+        [Fact]
+        public void HoldingJellyShouldNotifySpecialChange()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () => pbj.HoldJelly());
+        }
 
 
     }

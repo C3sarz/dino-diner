@@ -145,5 +145,21 @@ namespace DinoDiner.MenuTest.Drinks
             Assert.Collection<string>(water.Special,
                 item => Assert.Equal("Add Lemon", item));
         }
+
+        [Fact]
+        public void SetSizeNotifyChanges()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Size", () => water.Size = Size.Large);
+            Assert.PropertyChanged(water, "Calories", () => water.Size = Size.Large);
+            Assert.PropertyChanged(water, "Price", () => water.Size = Size.Large);
+        }
+
+        [Fact]
+        public void SpecialNotifyChanges()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Special", () => water.AddLemon());
+        }
     }
 }

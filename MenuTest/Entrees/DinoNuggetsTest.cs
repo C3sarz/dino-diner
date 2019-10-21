@@ -96,5 +96,12 @@ namespace MenuTest.Entrees
             Assert.Collection<string>(dn.Special,
                 item => Assert.Equal("3 Extra Nuggets", item));
         }
+
+        [Fact]
+        public void AddNuggetShouldNotifySpecialChange()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            Assert.PropertyChanged(dn, "Special", () => dn.AddNugget());
+        }
     }
 }

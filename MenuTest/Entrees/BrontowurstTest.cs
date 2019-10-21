@@ -95,5 +95,15 @@ namespace MenuTest.Entrees
             Assert.Collection<string>(bw.Special,
                 item => Assert.Equal("Hold Peppers", item));
         }
-    }
+
+        [Fact]
+        public void HoldingShouldNotifySpecialChange()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.PropertyChanged(bw, "Special", () => bw.HoldBun());
+            Assert.PropertyChanged(bw, "Special", () => bw.HoldOnion());
+            Assert.PropertyChanged(bw, "Special", () => bw.HoldBun());
+        }
+
+   }
 }

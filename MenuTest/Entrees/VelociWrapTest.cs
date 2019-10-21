@@ -67,7 +67,7 @@ namespace MenuTest.Entrees
             Assert.Collection<string>(vw.Special,
                 item => Assert.Equal("Hold Dressing", item),
                 item => Assert.Equal("Hold Lettuce", item),
-                item => Assert.Equal("Hold Cheese", item),
+                item => Assert.Equal("Hold Cheese", item)
                 );
         }
 
@@ -99,6 +99,15 @@ namespace MenuTest.Entrees
             Assert.Collection<string>(vw.Special,
                 item => Assert.Equal("Hold Cheese", item)
                 );
+        }
+
+        [Fact]
+        public void HoldingShouldNotifySpecialChange()
+        {
+            VelociWrap vw = new VelociWrap();
+            Assert.PropertyChanged(vw, "Special", () => vw.HoldLettuce());
+            Assert.PropertyChanged(vw, "Special", () => vw.HoldDressing());
+            Assert.PropertyChanged(vw, "Special", () => vw.HoldCheese());
         }
     }
 }

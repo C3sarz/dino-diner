@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Blueprint for the entrees.
     /// </summary>
-    public abstract class Entree : IMenuItem, IOrderItem
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
 
         /// <summary>
