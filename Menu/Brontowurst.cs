@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -15,6 +16,20 @@ namespace DinoDiner.Menu
         private bool _bun = true;
         private bool _peppers = true;
         private bool _onions = true;
+
+        /// <summary>
+        /// Event Handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Property Change event caller.
+        /// </summary>
+        /// <param name="propertyName">Name of changing property.</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public override List<string> Ingredients  
         {

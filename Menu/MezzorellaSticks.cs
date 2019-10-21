@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -19,6 +20,24 @@ namespace DinoDiner.Menu
         {
             Size = Size.Small;
         }
+
+        /// <summary>
+        /// Event Handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Property Change event caller.
+        /// </summary>
+        /// <param name="propertyName">Name of changing property.</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// List of ingredients.
+        /// </summary>
         public override List<string> Ingredients
         {
             get

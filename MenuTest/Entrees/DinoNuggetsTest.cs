@@ -85,5 +85,16 @@ namespace MenuTest.Entrees
             dn.AddNugget();
             Assert.Equal<uint>(dn.Calories, 59*9);
         }
+
+        [Fact]
+        public void SpecialShouldContainExtraNuggets()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            int extra = 3;
+            for (int i = 0; i<extra; i++) dn.AddNugget();
+
+            Assert.Collection<string>(dn.Special,
+                item => Assert.Equal("3 Extra Nuggets", item));
+        }
     }
 }

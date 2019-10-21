@@ -118,5 +118,38 @@ namespace DinoDiner.MenuTest.Drinks
             coffee.LeaveRoomForCream();
             Assert.True(coffee.RoomForCream);
         }
+
+        //Special property tests
+
+        [Fact]
+        public void SpecialShouldContainRoomForCream()
+        {
+            JurassicJava coffee = new JurassicJava();
+            coffee.LeaveRoomForCream();
+            Assert.Collection<string>(coffee.Special,
+            item => Assert.Equal("Room For Cream", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainIce()
+        {
+            JurassicJava coffee = new JurassicJava();
+            coffee.AddIce();
+            Assert.Collection<string>(coffee.Special,
+            item => Assert.Equal("Add Ice", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainAll()
+        {
+            JurassicJava coffee = new JurassicJava();
+            coffee.LeaveRoomForCream();
+            coffee.AddIce();
+            Assert.Collection<string>(coffee.Special,
+                item => Assert.Equal("Room For Cream", item),
+                item => Assert.Equal("Add Ice", item));
+        }
+
     }
 }
+

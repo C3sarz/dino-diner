@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -21,6 +22,20 @@ namespace DinoDiner.Menu
         /// Determines if the coffee had caffeine removed.
         /// </summary>
         public bool Decaf { get; set; } = false;
+
+        /// <summary>
+        /// Event Handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Property Change event caller.
+        /// </summary>
+        /// <param name="propertyName">Name of changing property.</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public JurassicJava()
         {

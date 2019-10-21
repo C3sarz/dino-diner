@@ -64,6 +64,56 @@ namespace MenuTest.Entrees
             sb.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
         }
-    }
 
+        [Fact]
+        public void SpecialShouldContainAll()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            sb.HoldKetchup();
+            sb.HoldMustard();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special,
+                item => Assert.Equal("Hold Bun", item),
+                item => Assert.Equal("Hold Ketchup", item),
+                item => Assert.Equal("Hold Mustard", item),
+                item => Assert.Equal("Hold Pickle", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainHoldBun()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            Assert.Collection<string>(sb.Special,
+                item => Assert.Equal("Hold Bun", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainHoldKetchup()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldKetchup();
+            Assert.Collection<string>(sb.Special,
+                item => Assert.Equal("Hold Ketchup", item);
+        }
+
+        [Fact]
+        public void SpecialShouldContainHoldMustard()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldMustard();
+            Assert.Collection<string>(sb.Special,
+                item => Assert.Equal("Hold Mustard", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainHoldPickle()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special,
+                item => Assert.Equal("Hold Pickle", item));
+        }
+    }
 }

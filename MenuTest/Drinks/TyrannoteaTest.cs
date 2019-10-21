@@ -184,5 +184,34 @@ namespace DinoDiner.MenuTest.Drinks
             tea.Sweet = false;
             Assert.Equal<uint>(32, tea.Calories);
         }
+
+        [Fact]
+        public void SpecialShouldContainAll()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            tea.HoldIce();
+            Assert.Collection<string>(tea.Special,
+                item => Assert.Equal("Add Lemon", item),
+                item => Assert.Equal("Add Ice", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainAddLemon()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            Assert.Collection<string>(tea.Special,
+                item => Assert.Equal("Add Lemon", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainAddIce()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.HoldIce();
+            Assert.Collection<string>(tea.Special,
+                item => Assert.Equal("Add Ice", item));
+        }
     }
 }

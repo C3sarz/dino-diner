@@ -3,11 +3,12 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         /// <summary>
         /// Price with only a getter.
@@ -21,5 +22,9 @@ namespace DinoDiner.Menu
         /// Array of special properties of the item.
         /// </summary>
         string[] Special { get; }
+        /// <summary>
+        /// Event Handler for the property changes.
+        /// </summary>
+        event PropertyChangedEventHandler PropertyChanged;
     }
 }

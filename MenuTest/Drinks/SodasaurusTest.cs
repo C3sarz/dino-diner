@@ -128,5 +128,14 @@ namespace DinoDiner.MenuTest.Drinks
             soda.HoldIce();
             Assert.False(soda.Ice);
         }
+
+        [Fact]
+        public void SpecialShouldContainHoldIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.Collection<string>(soda.Special,
+                item => Assert.Equal("Hold Ice", item));
+        }
     }
 }

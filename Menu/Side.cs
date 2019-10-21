@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -47,5 +48,20 @@ namespace DinoDiner.Menu
         /// Array of special properties of the item.
         /// </summary>
         public abstract string[] Special { get; }
+
+        /// <summary>
+        /// Event Handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Property Change event caller.
+        /// </summary>
+        /// <param name="propertyName">Name of changing property.</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

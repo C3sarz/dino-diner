@@ -117,5 +117,33 @@ namespace DinoDiner.MenuTest.Drinks
             Assert.True(water.Lemon);
         }
 
+        [Fact]
+        public void SpecialShouldContainAll()
+        {
+            Water water = new Water();            
+            water.HoldIce();
+            water.AddLemon();
+            Assert.Collection<string>(water.Special,
+                item => Assert.Equal("Hold Ice", item),
+                item => Assert.Equal("Add Lemon", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainHoldIce()
+        {
+            Water water = new Water();
+            water.HoldIce();
+            Assert.Collection<string>(water.Special,
+                item => Assert.Equal("Hold Ice", item));
+        }
+
+        [Fact]
+        public void SpecialShouldContainAddLemon()
+        {
+            Water water = new Water();
+            water.AddLemon();
+            Assert.Collection<string>(water.Special,
+                item => Assert.Equal("Add Lemon", item));
+        }
     }
 }

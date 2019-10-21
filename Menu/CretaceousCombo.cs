@@ -14,9 +14,16 @@ namespace DinoDiner.Menu
     /// </summary>
     public class CretaceousCombo : IMenuItem, INotifyPropertyChanged,IOrderItem
     {
+        /// <summary>
+        /// Event Handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void NotifyOnPropertyChanged(string propertyName)
+        /// <summary>
+        /// Property Change event caller.
+        /// </summary>
+        /// <param name="propertyName">Name of changing property.</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
