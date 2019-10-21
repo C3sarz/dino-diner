@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
+        xmlns:menu="clr-namespace:DinoDiner.Menu;assembly=Menu"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <menu:Order/>
+    </Window.DataContext>
     <DockPanel>
-        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <local:OrderList DockPanel.Dock="Right"/>
+        <Frame Source="MenuCategorySelection.xaml" DockPanel.Dock="Left"></Frame>
     </DockPanel>
 </Window>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="PointOfSale.OrderList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="200">
+
+
+    <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="20"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="20"/>
+        <RowDefinition Height="30"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"/>
+    <TextBlock Text="#" FontWeight="Bold" Grid.Column="1" Margin="5,0,0,0"/>
+        
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Description}"/>
+                        <ListBox BorderBrush="White" ItemsSource="{Binding Path=Special}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <TextBlock Text="Subtotal $" FontWeight="Bold" TextAlignment="Right" Grid.Row="2"/>
+        <TextBlock Text="{Binding Path=SubtotalCost}" FontWeight="Bold" Grid.Column="1" Grid.Row="2"/>
+        <Button Grid.Row="3" Width="100">Cancel</Button>
+        <Button Grid.Row="3" Grid.Column="1" Width="100">Pay</Button>
+    </Grid>
+</UserControl>
