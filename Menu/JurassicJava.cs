@@ -18,10 +18,20 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
+        private bool decaf;
+
         /// <summary>
         /// Determines if the coffee had caffeine removed.
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Event Handler
@@ -41,6 +51,7 @@ namespace DinoDiner.Menu
         {
             this.Size = Size.Small;
             this.Ice = false;
+            decaf = false;
         }
 
         /// <summary>
@@ -71,6 +82,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

@@ -38,6 +38,7 @@ namespace DinoDiner.Menu
                 else if (!value && sweet) Calories = Calories / 2;
                 sweet = value;
                 NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -83,6 +84,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

@@ -36,5 +36,25 @@ namespace PointOfSale
             order.Items = list;
             DataContext = order;
         }
+
+        private void passDataContentToPage()
+        {
+            if (OrderUI.Content is Page page)   //could either be frameworkelement (parent) or page (further down the inheritance chain)
+            {
+                page.DataContext = OrderUI.DataContext;
+
+            }
+
+        }
+
+        private void OnLoadCompleted(object sender, NavigationEventArgs args)
+        {
+            passDataContentToPage();
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            passDataContentToPage();
+        }
     }
 }
