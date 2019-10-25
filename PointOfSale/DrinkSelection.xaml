@@ -70,7 +70,7 @@
 
         <Button  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="150">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/smolDino.jpg"/>
+                <ImageBrush ImageSource="Assets/smolDino.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Small</Bold></TextBlock>
         </Button>
