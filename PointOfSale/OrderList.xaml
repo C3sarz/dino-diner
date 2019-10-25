@@ -22,11 +22,18 @@
     <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"/>
     <TextBlock Text="#" FontWeight="Bold" Grid.Column="1" Margin="5,0,0,0"/>
         
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
+        <ListBox Name="OrderItems" SelectionChanged="OnSelectionChanged" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
+                    <StackPanel Width="190">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="10"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding Path=Description}"/>
+                            <Button Grid.Column="1" Background="Red" Foreground="White" Click="RemoveItem" Content="X"/>
+                        </Grid>
                         <ListBox BorderBrush="White" ItemsSource="{Binding Path=Special}"/>
                     </StackPanel>
                 </DataTemplate>

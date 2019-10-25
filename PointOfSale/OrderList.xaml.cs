@@ -25,5 +25,30 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        public NavigationService NavigationService { get; set; }
+
+        private void RemoveItem(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if(sender is FrameworkElement element)
+                {
+                    if(element.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            if(OrderItems.SelectedItem is Side side)
+            {
+                NavigationService?.Navigate(new SideSelection(side));
+            }
+
+        }
     }
 }

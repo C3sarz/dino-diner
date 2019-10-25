@@ -26,15 +26,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order order = DataContext as Order;
-            ObservableCollection<IOrderItem> list = new ObservableCollection<IOrderItem>();
-            list.Add(new PrehistoricPBJ());
-            list.Add(new Fryceritops());
-            list.Add(new Sodasaurus());
-            SteakosaurusBurger sb = new SteakosaurusBurger();
-            sb.HoldPickle();
-            list.Add(sb);
-            order.Items = list;
-            DataContext = order;
+            Order.NavigationService = OrderUI.NavigationService;
         }
 
         private void passDataContentToPage()

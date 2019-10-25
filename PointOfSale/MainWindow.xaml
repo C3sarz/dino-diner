@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:PointOfSale"
         xmlns:menu="clr-namespace:DinoDiner.Menu;assembly=Menu"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" MinWidth="200" Width="800">
     <Window.DataContext>
         <menu:Order/>
     </Window.DataContext>
     <DockPanel>
-        <local:OrderList DockPanel.Dock="Right"/>
+        <local:OrderList x:Name="Order" DockPanel.Dock="Right"/>
         <Frame Name="OrderUI" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged" Source="MenuCategorySelection.xaml" DockPanel.Dock="Left"></Frame>
     </DockPanel>
 </Window>

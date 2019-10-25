@@ -29,12 +29,18 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            this.side = side;
+        }
+
         private void selectFryceritops(object sender, RoutedEventArgs e)
         {
             if(DataContext is Order order)
             {
                 side = new Fryceritops();
-                order.Items.Add(side);
+                order.Add(side);
             }
         }
 
