@@ -22,6 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        /// <summary>
+        /// Holds the current drink.
+        /// </summary>
         private Drink drink;
 
         public DrinkSelection()

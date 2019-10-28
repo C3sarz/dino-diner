@@ -90,5 +90,8 @@
         <Button  Grid.Row="3" Grid.Column="2" Width="150">
             <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="DarkBlue"><Bold>Hold Ice</Bold></TextBlock>
         </Button>
+        <Button Background="Green" Grid.Row="4" Grid.Column="2" Width="150">
+            <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="Black"><Bold>DONE</Bold></TextBlock>
+        </Button>
     </Grid>
 </Page>

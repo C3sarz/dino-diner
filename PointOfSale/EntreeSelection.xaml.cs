@@ -50,7 +50,7 @@ namespace PointOfSale
             {
                 entree = new DinoNuggets();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectPPBJ(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace PointOfSale
             {
                 entree = new PrehistoricPBJ();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new CustomizePrehistoricPBJ((entree as PrehistoricPBJ)));
             }
         }
         private void selectPWings(object sender, RoutedEventArgs e)
@@ -68,7 +68,7 @@ namespace PointOfSale
             {
                 entree = new PterodactylWings();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectStkBurger(object sender, RoutedEventArgs e)
@@ -77,7 +77,7 @@ namespace PointOfSale
             {
                 entree = new SteakosaurusBurger();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectTRexKBurger(object sender, RoutedEventArgs e)
@@ -86,7 +86,7 @@ namespace PointOfSale
             {
                 entree = new TRexKingBurger();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectVWrap(object sender, RoutedEventArgs e)
@@ -95,8 +95,9 @@ namespace PointOfSale
             {
                 entree = new VelociWrap();
                 order.Add(entree);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
+
     }
 }

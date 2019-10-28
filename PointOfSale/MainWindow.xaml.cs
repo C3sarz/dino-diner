@@ -48,5 +48,10 @@ namespace PointOfSale
         {
             passDataContentToPage();
         }
+
+        private void OnReturnToCategorySelection(object sender, RoutedEventArgs e)
+        {
+            OrderUI.NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }

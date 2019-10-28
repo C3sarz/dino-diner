@@ -56,6 +56,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="CustomizePrehistoricPBJ.xaml.cs">
+      <DependentUpon>CustomizePrehistoricPBJ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EntreeSelection.xaml.cs">
       <DependentUpon>EntreeSelection.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomizeCombo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizePrehistoricPBJ.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +189,16 @@
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\DinoDiner-16.png" />
+    <Resource Include="Assets\DinoDiner-17.png" />
+    <Resource Include="Assets\DinoDiner-18.png" />
+    <Resource Include="Assets\DinoDiner-19.png" />
+    <Resource Include="Assets\DinoDiner-20.png" />
+    <Resource Include="Assets\DinoDiner-21.png" />
+    <Resource Include="Assets\DinoDiner-22.png" />
+    <Resource Include="Assets\DinoDiner-23.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
