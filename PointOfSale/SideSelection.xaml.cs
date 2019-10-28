@@ -41,6 +41,37 @@ namespace PointOfSale
             {
                 side = new Fryceritops();
                 order.Add(side);
+                NavigationService.Navigate(new DrinkSelection());
+            }
+        }
+
+        private void selectMnC(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                side = new MeteorMacAndCheese();
+                order.Add(side);
+                NavigationService.Navigate(new DrinkSelection());
+            }
+        }
+
+        private void selectTriceritots(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                side = new Triceritots();
+                order.Add(side);
+                NavigationService.Navigate(new DrinkSelection());
+            }
+        }
+
+        private void selectMSticks(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                side = new MezzorellaSticks();
+                order.Add(side);
+                NavigationService.Navigate(new DrinkSelection());
             }
         }
 

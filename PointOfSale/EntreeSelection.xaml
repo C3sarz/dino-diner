@@ -23,49 +23,49 @@
 
         <TextBlock Grid.Row="0" Grid.Column="1"  TextAlignment="Center" VerticalAlignment="Center" FontSize="30">Entrees</TextBlock>
 
-        <Button  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectBWurst" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>BrontoWurst</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectNuggets" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Dino-Nuggets</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectPPBJ" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"/>
             </Button.Background>
             <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="DarkBlue"><Bold>Prehistoric PB&amp;J</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectPWings" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"/>
             </Button.Background>
             <TextBlock TextWrapping="Wrap" FontSize="20" Foreground="DarkBlue"><Bold>Pterodactyl Wings</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectStkBurger" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Steakosaurus Burger</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectTRexKBurger" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"/>
             </Button.Background>
             <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="DarkBlue"><Bold>T-Rex Kingburger</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
+        <Button Click="selectVWrap" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center"  Width="200">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"/>
             </Button.Background>

@@ -19,15 +19,23 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderList.xaml
     /// </summary>
-    public partial class OrderList : UserControl
+    public partial class OrderControl : UserControl
     {
-        public OrderList()
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public OrderControl()
         {
             InitializeComponent();
         }
 
         public NavigationService NavigationService { get; set; }
 
+        /// <summary>
+        /// Removes an item from the list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void RemoveItem(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
@@ -42,11 +50,26 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Handles manual selection of items in the list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             if(OrderItems.SelectedItem is Side side)
             {
                 NavigationService?.Navigate(new SideSelection(side));
+            }
+
+            if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
+            }
+
+            if (OrderItems.SelectedItem is Entree entree)
+            {
+                NavigationService?.Navigate(new EntreeSelection(entree));
             }
 
         }

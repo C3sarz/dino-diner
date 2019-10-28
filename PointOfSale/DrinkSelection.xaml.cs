@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DDSize = DinoDiner.Menu.Size;
 
 namespace PointOfSale
 {
@@ -20,14 +22,68 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        private Drink drink;
+
         public DrinkSelection()
         {
             InitializeComponent();
         }
 
+        public DrinkSelection(Drink d)
+        {
+            InitializeComponent();
+            drink = d;
+        }
+
         private void SelectFlavor(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new FlavorSelection());
+        }
+
+        /// <summary>
+        /// Handles the size changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnChangeSize(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
+        }
+
+        private void selectSoda(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                drink = new Sodasaurus();
+                order.Add(drink);
+            }
+        }
+        private void selectTea(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                drink = new Tyrannotea();
+                order.Add(drink);
+            }
+        }
+        private void selectJJava(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                drink = new JurassicJava();
+                order.Add(drink);
+            }
+        }
+        private void selectWater(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                drink = new Water();
+                order.Add(drink);
+            }
         }
     }
 }
