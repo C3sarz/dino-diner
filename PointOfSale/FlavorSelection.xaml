@@ -23,31 +23,31 @@
 
         <TextBlock Grid.Row="0" Grid.Column="1"  TextAlignment="Center" VerticalAlignment="Center" FontSize="30">Flavor</TextBlock>
 
-        <Button  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="230">
+        <Button Click="OnChangeFlavor" Tag="Chocolate" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Chocolate</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="Cola" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Cola</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="Cherry" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Cherry</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="Lime" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Lime</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="Orange" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Orange</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="RootBeer" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Root Beer</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center"  Width="230">
+        <Button Click="OnChangeFlavor" Tag="Vanilla" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center"  Width="230">
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Vanilla</Bold></TextBlock>
         </Button>
     </Grid>

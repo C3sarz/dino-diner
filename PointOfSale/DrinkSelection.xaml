@@ -26,14 +26,14 @@
         <TextBlock Grid.Row="0" Grid.Column="1"  TextAlignment="Center" VerticalAlignment="Center" FontSize="25">Size</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2"  TextAlignment="Center" VerticalAlignment="Center" FontSize="25">Special</TextBlock>
 
-        <Button Click="selectSoda" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="150">
+        <Button Name="Soda" Click="selectSoda" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"  Width="150">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-14.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>SodaSaurus</Bold></TextBlock>
         </Button>
 
-        <Button Click="selectTea" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Width="150">
+        <Button Name="Tea" Click="selectTea" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Width="150">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-12.png"/>
             </Button.Background>
@@ -75,22 +75,18 @@
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Small</Bold></TextBlock>
         </Button>
 
-        <Button Click="SelectFlavor"  Grid.Row="1" Grid.Column="2" Width="150">
+        <Button Click="OnSelectSpecial" Name="Special" Grid.Row="1" Grid.Column="2" Width="150">
             <TextBlock FontSize="20" Foreground="DarkBlue" FontWeight="Bold" Text="Sweet/&#x0a;Decaf/&#x0a;Flavor"></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="2" Width="150">
+        <Button Click="OnSelectAddLemon" Name="Lemon" Grid.Row="2" Grid.Column="2" Width="150">
             <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="DarkBlue"><Bold>Add Lemon</Bold></TextBlock>
         </Button>
 
-        <Button  Grid.Row="2" Grid.Column="2" Width="150">
-            <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="DarkBlue"><Bold>Add Lemon</Bold></TextBlock>
-        </Button>
-
-        <Button  Grid.Row="3" Grid.Column="2" Width="150">
+        <Button Click="OnSelectHoldIce" Name="HoldIce" Grid.Row="3" Grid.Column="2" Width="150">
             <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="DarkBlue"><Bold>Hold Ice</Bold></TextBlock>
         </Button>
-        <Button Background="Green" Grid.Row="4" Grid.Column="2" Width="150">
+        <Button Click="OnDone" Background="Green" Grid.Row="4" Grid.Column="2" Width="150">
             <TextBlock FontSize="20" VerticalAlignment="Center" Foreground="Black"><Bold>DONE</Bold></TextBlock>
         </Button>
     </Grid>

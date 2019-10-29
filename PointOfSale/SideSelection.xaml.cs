@@ -41,7 +41,7 @@ namespace PointOfSale
             {
                 side = new Fryceritops();
                 order.Add(side);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 
@@ -51,7 +51,7 @@ namespace PointOfSale
             {
                 side = new MeteorMacAndCheese();
                 order.Add(side);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 
@@ -61,7 +61,7 @@ namespace PointOfSale
             {
                 side = new Triceritots();
                 order.Add(side);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 
@@ -71,7 +71,7 @@ namespace PointOfSale
             {
                 side = new MezzorellaSticks();
                 order.Add(side);
-                NavigationService.Navigate(new DrinkSelection());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 

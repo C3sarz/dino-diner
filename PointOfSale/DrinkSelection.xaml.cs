@@ -30,17 +30,15 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            HoldIce.IsEnabled = false;
+            Lemon.IsEnabled = false;
+            Special.IsEnabled = false;
         }
 
         public DrinkSelection(Drink d)
         {
             InitializeComponent();
             drink = d;
-        }
-
-        private void SelectFlavor(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new FlavorSelection());
         }
 
         /// <summary>
@@ -62,6 +60,9 @@ namespace PointOfSale
             {
                 drink = new Sodasaurus();
                 order.Add(drink);
+                HoldIce.IsEnabled = true;
+                Special.IsEnabled = true;
+                Lemon.IsEnabled = false;
             }
         }
         private void selectTea(object sender, RoutedEventArgs e)
@@ -70,6 +71,9 @@ namespace PointOfSale
             {
                 drink = new Tyrannotea();
                 order.Add(drink);
+                Special.IsEnabled = true;
+                HoldIce.IsEnabled = true;
+                Lemon.IsEnabled = true;
             }
         }
         private void selectJJava(object sender, RoutedEventArgs e)
@@ -79,6 +83,9 @@ namespace PointOfSale
                 drink = new JurassicJava();
                 order.Add(drink);
             }
+            Lemon.IsEnabled = false;
+            HoldIce.IsEnabled = false;
+            Special.IsEnabled = true;
         }
         private void selectWater(object sender, RoutedEventArgs e)
         {
@@ -86,7 +93,59 @@ namespace PointOfSale
             {
                 drink = new Water();
                 order.Add(drink);
+                Special.IsEnabled = true;
+                HoldIce.IsEnabled = true;
+                Lemon.IsEnabled = true;
             }
         }
+
+        private void OnSelectSpecial(object sender, RoutedEventArgs e)
+        {
+            if(drink is JurassicJava coffee)
+            {
+                coffee.Decaf = true;
+            }
+            if (drink is Tyrannotea tea)
+            {
+                tea.Sweet = true;
+            }
+            if(drink is Sodasaurus soda)
+            {
+                NavigationService.Navigate(new FlavorSelection(soda));
+            }
+        }
+
+        private void OnSelectHoldIce(object sender, RoutedEventArgs e)
+        {
+            if (drink is Water water)
+            {
+                water.HoldIce();
+            }
+            if (drink is Tyrannotea tea)
+            {
+                tea.HoldIce();
+            }
+            if (drink is Sodasaurus soda)
+            {
+                soda.HoldIce();
+            }
+        }
+        private void OnSelectAddLemon(object sender, RoutedEventArgs e)
+        {
+            if (drink is Water water)
+            {
+                water.AddLemon();
+            }
+            if (drink is Tyrannotea tea)
+            {
+                tea.AddLemon();
+            }
+        }
+
+        private void OnDone(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
     }
 }
