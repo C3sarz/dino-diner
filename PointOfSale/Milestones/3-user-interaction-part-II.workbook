@@ -1,0 +1,39 @@
+﻿---
+uti: com.xamarin.workbook
+id: 14dcd7b3-c0db-4702-871d-c8b431da2a8e
+title: 3-user-interaction-part-II
+platforms:
+- WPF
+packages:
+- id: xunit
+  version: 2.4.1
+---
+
+# Point of Sale Milestone 3
+
+## User Interaction Part II
+
+For this milestone you will be working with a Windows Presentation Framework (WPF) project that draws upon our Menu library and is the basis for the Point-of-Sale system (The register) in a DinoDiner cafe.  Specifically, you will be implementing interactivity in the WPF pages and the OrderControl.
+
+## General Requirements, Usability, and Aesthetics
+
+You will need to follow the Style Guide in writing your Page code.  We will not be writing tests for the user interface (yet).  You do not have to match the pages in the flow diagram exactly, but your pages should be aesthetically pleasing, buttons should be sized appropriately for a touch screen (big enough to easily touch), and the majority of the available screen space should be used (remember, the order will take a part of the page).
+
+__Special Prize for Aesthetics__ A special prize will be given to the best aesthetic design in each section (as voted by the TAs and Instructor) for the POS system.
+
+## Order Refactoring (20 points)
+Refactor the Order class in the Menu project to implement the INotifyPropertyChanged interface.  Create two new methods - `Add(IOrderItem item)` which adds a new order item, and `Remove(IOrderItem item)` which removes an order item.  Refactor the `Items` property to be read-only (providing only a getter) which is an array of `IOrderItems` (Hint, you'll want a private backing variable to hold your IOrderItem collection).
+
+## Testing the Notifications (20 points)
+Your Menu Project should pass all notification tests in the Upstream repository.
+
+## Entree Customization Pages (30 points)
+Add pages needed to customize Entrees.  This should include all of the "holding" options and the "extra nugget" available for these Entree classes.
+
+## Combo Customization Page (30 points)
+Refactor your _ComboCustomization.xaml_ so that:
+
+1. Clicking the Entree button takes you to the corresponding Entree Customization Page, and then returns you to the Combo Customization page.
+2. Clicking the Side button takes you to the Side Selection page, allowing you to pick and customize a side and then returns you to the Combo Customization Page
+3. Clicking the Drink button takes you to the Drink Selection page, allowing you to pick and customize your drink
+4. Clicking one of the Size buttons applies the selected size to your combo.

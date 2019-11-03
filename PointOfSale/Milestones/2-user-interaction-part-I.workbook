@@ -1,0 +1,41 @@
+﻿---
+uti: com.xamarin.workbook
+id: 14dcd7b3-c0db-4702-871d-c8b431da2a8e
+title: 2-user-interaction-part-I
+platforms:
+- WPF
+packages:
+- id: xunit
+  version: 2.4.1
+---
+# Point of Sale Milestone 2
+
+## User Interaction Part I
+
+For this milestone you will be working with a Windows Presentation Framework (WPF) project that draws upon our Menu library and is the basis for the Point-of-Sale system (The register) in a DinoDiner cafe.  Specifically, you will be implementing interactivity in the WPF pages and the OrderControl.
+
+## General Requirements, Usability, and Aesthetics
+
+You will need to follow the Style Guide in writing your Page code.  We will not be writing tests for the user interface (yet).  You do not have to match the pages in the flow diagram exactly, but your pages should be aesthetically pleasing, buttons should be sized appropriately for a touch screen (big enough to easily touch), and the majority of the available screen space should be used (remember, the order will take a part of the page).
+
+__Special Prize for Aesthetics__ A special prize will be given to the best aesthetic design in each section (as voted by the TAs and Instructor) for the POS system.
+
+## OrderControl (30 points)
+
+Create a custom control to represent the order-in-progress.  It should display a list of all items added to the order, and the SubtotalCost of the order (You may choose to display additional information like the SalesTaxCost and TotalCost).
+
+Each OrderItem displayed in the list should display both the Description and any Special instructions for that item.
+
+Each OrderItem in the list should also feature a "remove" button (which can be an X or other symbol) that when clicked will remove the item from the Order.
+
+## Entree Selection Page (10 points)
+Refactor your _EntreeSelection.xaml_ so that clicking an entree button Adds the entree to the Order and then eturns to the MenuCategorySelection screen
+
+## Side Selection Page (20 points)
+Refactor the _SideSelection.xaml_ so that clicking a side button adds the side to the Order and then clicking a size button sets the size of the side and returns to the MenuCategorySelection screen.
+
+## Drink Selection Page (20 points)
+Refactor the _DrinkSelection.xaml_ so that clicking a drink button adds the drink to the order, and clicking a size button sets its size.  Finally, it should dynamically add/remove buttons for lemon, flavor, decaf, and sweet, when appropriate for the currently selected drink.  Clicking these buttons should modify the current drink.  Clicking the flavor button should open the Flavor Selection page.  Add a Done button that will return the Frame to the MenuCategorySelection screen.
+
+## Flavor Selection Page (20 points)
+Refactor the _FlavorSelection.xaml_ so that clicking one of the flavor buttons applies the flavor to the current drink and returns to the Drink Selection Page.
