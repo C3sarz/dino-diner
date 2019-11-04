@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="ComboSelection">
 
     <Grid>
@@ -23,49 +23,49 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="30">Combo Selection</TextBlock>
 
-        <Button Click="CustomizeCombo"  Grid.Row="1" Grid.Column="0">
+        <Button Click="selectBWurstCombo"  Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-16.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Brontowurst Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="1" Grid.Column="1">
+        <Button Click="selectNuggetsCombo" Grid.Row="1" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-17.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Dino-Nuggets Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="1" Grid.Column="2">
+        <Button Click="selectPPBJCombo" Grid.Row="1" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-18.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Prehistoric PB&amp;J Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="0">
+        <Button Click="selectPWingsCombo" Grid.Row="2" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-19.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Pterodactyl Wings Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="1">
+        <Button Click="selectStkBurgerCombo" Grid.Row="2" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-20.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">Steakosaurus Burger Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="2" Grid.Column="2">
+        <Button Click="selectTRexKBurgerCombo" Grid.Row="2" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-21.png"></ImageBrush>
             </Button.Background>
             <TextBlock FontSize="20" FontWeight="Bold" TextWrapping="Wrap">T-Rex Kingburger Combo</TextBlock>
         </Button>
 
-        <Button Click="CustomizeCombo" Grid.Row="3" Grid.Column="1">
+        <Button Click="selectVWrapCombo" Grid.Row="3" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-22.png"></ImageBrush>
             </Button.Background>
