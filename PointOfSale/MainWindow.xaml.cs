@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Class: MainWindow.xaml.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;

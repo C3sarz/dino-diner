@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Class: EntreeSelection.xaml.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,8 +43,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new Brontowurst();
+                NavigationService.Navigate(new CustomizeBrontowurst(entree as Brontowurst));
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectNuggets(object sender, RoutedEventArgs e)
@@ -49,8 +52,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new DinoNuggets();
+                NavigationService.Navigate(new CustomizeNuggets(entree as DinoNuggets));
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectPPBJ(object sender, RoutedEventArgs e)
@@ -58,8 +61,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new PrehistoricPBJ();
-                order.Add(entree);
                 NavigationService.Navigate(new CustomizePrehistoricPBJ((entree as PrehistoricPBJ)));
+                order.Add(entree);
             }
         }
         private void selectPWings(object sender, RoutedEventArgs e)
@@ -76,8 +79,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new SteakosaurusBurger();
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(entree as SteakosaurusBurger));
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectTRexKBurger(object sender, RoutedEventArgs e)
@@ -85,8 +88,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new TRexKingBurger();
+                NavigationService.Navigate(new CustomizeTrexBurger(entree as TRexKingBurger));
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         private void selectVWrap(object sender, RoutedEventArgs e)
@@ -94,8 +97,8 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new VelociWrap();
+                NavigationService.Navigate(new CustomizeWrap(entree as VelociWrap));
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 

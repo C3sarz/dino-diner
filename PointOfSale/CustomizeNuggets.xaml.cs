@@ -1,4 +1,4 @@
-﻿/* Class: CustomizePrehistoricPBJ.xaml.cs
+﻿/* Class: CustomizeNuggets.xaml.cs
 * Author: Cesar Zavala
 */
 using System;
@@ -20,26 +20,32 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeNuggets.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeNuggets : Page
     {
-        private PrehistoricPBJ pbj;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        private DinoNuggets dn;
+        public CustomizeNuggets(DinoNuggets dn)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.dn = dn;
         }
 
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Adds a nugget.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void AddNugget(object sender, RoutedEventArgs args)
         {
-            pbj.HoldPeanutButter();
-        }
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
-        {
-            pbj.HoldJelly();
+            dn.AddNugget();
         }
 
+        /// <summary>
+        /// Takes you to the previous page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDone(object sender, RoutedEventArgs args)
         {
             NavigationService.GoBack();
