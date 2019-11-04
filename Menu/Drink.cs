@@ -46,7 +46,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Removes the ice.
         /// </summary>
-        public void HoldIce()
+        public virtual void HoldIce()
         {
             Ice = false;
             NotifyOfPropertyChanged("Special");

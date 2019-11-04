@@ -17,8 +17,7 @@ namespace MenuTest
         {
             Order order = new Order();
             ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
-            items.Add(new Fryceritops());
-            order.Items = items;
+            order.Add(new Fryceritops());
             Assert.Equal<double>(0.99, order.SubtotalCost);
         }
 
@@ -27,9 +26,8 @@ namespace MenuTest
         {
             Order order = new Order();
             ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
-            items.Add(new Fryceritops());
-            items.Add(new Sodasaurus());
-            order.Items = items;
+            order.Add(new Fryceritops());
+            order.Add(new Sodasaurus());
             Assert.Equal<double>((1.5+0.99), order.SubtotalCost);
         }
 
@@ -38,8 +36,7 @@ namespace MenuTest
         {
             Order order = new Order();
             ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
-            items.Add(new CretaceousCombo(new Brontowurst()));
-            order.Items = items;
+            order.Add(new CretaceousCombo(new Brontowurst()));
             Assert.Equal<double>((1.5 + 0.99 + 5.36 - 0.25), order.SubtotalCost);
         }
 
@@ -49,9 +46,8 @@ namespace MenuTest
             Order order = new Order();
             ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
             MockItem test = new MockItem();
-            items.Add(test);
-            items.Add(test);
-            order.Items = items;
+            order.Add(test);
+            order.Add(test);
             Assert.Equal<double>(0, order.SubtotalCost);
         }
     }

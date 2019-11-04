@@ -24,7 +24,7 @@ namespace DinoDiner.Menu
         /// Property Change event caller.
         /// </summary>
         /// <param name="propertyName">Name of changing property.</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
+        protected new void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -36,7 +36,11 @@ namespace DinoDiner.Menu
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set 
+            { 
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
         }
 
         /// <summary>
@@ -150,6 +154,15 @@ namespace DinoDiner.Menu
                 if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
+        }
+
+        /// <summary>
+        /// Holds the Ice
+        /// </summary>
+        public override void HoldIce()
+        {
+            Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
     }
 }
