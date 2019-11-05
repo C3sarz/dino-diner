@@ -29,6 +29,7 @@ namespace PointOfSale
         /// Holds the current drink.
         /// </summary>
         private Drink drink;
+        private CretaceousCombo combo;
 
         public DrinkSelection()
         {
@@ -44,6 +45,13 @@ namespace PointOfSale
             drink = d;
         }
 
+        public DrinkSelection(Drink d, CretaceousCombo combo)
+        {
+            InitializeComponent();
+            drink = d;
+            this.combo = combo;
+        }
+
         /// <summary>
         /// Handles the size changes.
         /// </summary>
@@ -54,6 +62,7 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                if (combo != null) combo.Drink = drink;
             }
         }
 
@@ -61,8 +70,16 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new Sodasaurus();
-                order.Add(drink);
+                if (combo != null)
+                {
+                    drink = new Sodasaurus();
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    drink = new Sodasaurus();
+                    order.Add(drink);
+                }
                 HoldIce.IsEnabled = true;
                 Special.IsEnabled = true;
                 Lemon.IsEnabled = false;
@@ -72,8 +89,16 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new Tyrannotea();
-                order.Add(drink);
+                if (combo != null)
+                {
+                    drink = new Tyrannotea();
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    drink = new Tyrannotea();
+                    order.Add(drink);
+                }
                 Special.IsEnabled = true;
                 HoldIce.IsEnabled = true;
                 Lemon.IsEnabled = true;
@@ -83,8 +108,16 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new JurassicJava();
-                order.Add(drink);
+                if (combo != null)
+                {
+                    drink = new JurassicJava();
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    drink = new JurassicJava();
+                    order.Add(drink);
+                }
             }
             Lemon.IsEnabled = false;
             HoldIce.IsEnabled = false;
@@ -94,9 +127,18 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                drink = new Water();
-                order.Add(drink);
-                Special.IsEnabled = true;
+                if (combo != null)
+                {
+                    drink = new Water();
+                    combo.Drink = drink;
+                }
+                else
+                {
+                    drink = new Water();
+                    order.Add(drink);
+
+                }
+                Special.IsEnabled = false;
                 HoldIce.IsEnabled = true;
                 Lemon.IsEnabled = true;
             }
@@ -104,17 +146,37 @@ namespace PointOfSale
 
         private void OnSelectSpecial(object sender, RoutedEventArgs e)
         {
-            if(drink is JurassicJava coffee)
+            if (combo != null)
             {
-                coffee.Decaf = true;
+                if (drink is JurassicJava coffee)
+                {
+                    coffee.Decaf = true;
+                    combo.Drink = drink;
+                }
+                if (drink is Tyrannotea tea)
+                {
+                    tea.Sweet = true;
+                    combo.Drink = drink;
+                }
+                if (drink is Sodasaurus soda)
+                {
+                    NavigationService.Navigate(new FlavorSelection(combo.Drink as Sodasaurus));
+                }
             }
-            if (drink is Tyrannotea tea)
+            else
             {
-                tea.Sweet = true;
-            }
-            if(drink is Sodasaurus soda)
-            {
-                NavigationService.Navigate(new FlavorSelection(soda));
+                if (drink is JurassicJava coffee)
+                {
+                    coffee.Decaf = true;
+                }
+                if (drink is Tyrannotea tea)
+                {
+                    tea.Sweet = true;
+                }
+                if (drink is Sodasaurus soda)
+                {
+                    NavigationService.Navigate(new FlavorSelection(soda));
+                }
             }
         }
 
@@ -123,14 +185,17 @@ namespace PointOfSale
             if (drink is Water water)
             {
                 water.HoldIce();
+                if(combo != null) combo.Drink = drink;
             }
             if (drink is Tyrannotea tea)
             {
                 tea.HoldIce();
+                if (combo != null) combo.Drink = drink;
             }
             if (drink is Sodasaurus soda)
             {
                 soda.HoldIce();
+                if (combo != null) combo.Drink = drink;
             }
         }
         private void OnSelectAddLemon(object sender, RoutedEventArgs e)
@@ -138,16 +203,22 @@ namespace PointOfSale
             if (drink is Water water)
             {
                 water.AddLemon();
+                if (combo != null) combo.Drink = drink;
             }
             if (drink is Tyrannotea tea)
             {
                 tea.AddLemon();
+                if (combo != null) combo.Drink = drink;
             }
         }
 
         private void OnDone(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (combo != null)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
 
     }

@@ -38,13 +38,20 @@ namespace PointOfSale
             entree = e;
         }
 
+        //public EntreeSelection(Entree e,CretaceousCombo combo)
+        //{
+        //    InitializeComponent();
+        //    entree = e;
+        //    this.combo = combo;
+        //}
+
         private void selectBWurst(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
-                entree = new Brontowurst();
-                NavigationService.Navigate(new CustomizeBrontowurst(entree as Brontowurst));
-                order.Add(entree);
+                    entree = new Brontowurst();
+                    NavigationService.Navigate(new CustomizeBrontowurst(entree as Brontowurst));
+                    order.Add(entree);
             }
         }
         private void selectNuggets(object sender, RoutedEventArgs e)

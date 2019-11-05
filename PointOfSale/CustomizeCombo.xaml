@@ -20,31 +20,41 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
+
+        <Button Name="CustomEntree" Click="CustomizeEntree" Grid.Row="1" Grid.Column="0" BorderThickness="4" HorizontalAlignment="Center" Width="210">
+            <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="Black"><Bold>Customize Entree</Bold></TextBlock>
+        </Button>
+
         <Button Click="CustomizeSide" Grid.Row="2" Grid.Column="0" BorderThickness="4" HorizontalAlignment="Center" Width="210">
             <TextBlock FontSize="20" Foreground="Black"><Bold>Selected Side</Bold></TextBlock>
         </Button>
+        
         <Button Click="Drinks" Grid.Row="2" Grid.Column="1" BorderThickness="4" HorizontalAlignment="Center" Width="210">
             <TextBlock FontSize="20" Foreground="Black"><Bold>Selected Drink</Bold>
             </TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Width="210">
+        
+        <Button Click="OnChangeSize" Tag="Large" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Width="210">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/trex.jpg"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Large</Bold></TextBlock>
         </Button>
-        <Button  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Width="208">
+        
+        <Button Click="OnChangeSize" Tag="Medium" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Width="208">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/mediumDino2.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Medium</Bold></TextBlock>
         </Button>
-        <Button  Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Width="208" Height="138">
+        
+        <Button Click="OnChangeSize" Tag="Small" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Width="208" Height="138">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/smolDino.png"/>
             </Button.Background>
             <TextBlock FontSize="20" Foreground="DarkBlue"><Bold>Small</Bold></TextBlock>
         </Button>
+        
         <TextBlock Grid.Row="0" Grid.Column="0"  TextAlignment="Right" VerticalAlignment="Center" FontSize="20">Customize</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="Black">Size</TextBlock>
     </Grid>
