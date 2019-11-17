@@ -1,0 +1,47 @@
+﻿---
+uti: com.xamarin.workbook
+id: 14dcd7b3-c0db-4702-871d-c8b431da2a8e
+title: 1-add-entree-classes
+platforms:
+- WPF
+packages:
+- id: xunit
+  version: 2.4.1
+---
+# Website Milestone 1 - Create Basic Pages
+
+For this milestone you will be creating a website for the DinoDiner franchise.  Begin by pulling the upstream repository to add the Website project to your solution.  Then add the following functionality to the site:
+
+## Index Page (10 points possible)
+Modify the existing _Index.cshtml_ to:
+1. Display a banner image for DinoDiner (choose one of those provided in the files section of KSOL)
+2. Include a link to the Menu page
+3. Include a link to the Privacy page
+4. Include a link to the About page
+
+## Privacy Page (10 points possible)
+Create a new Razor page named _Privacy.cshtml_.  It should:
+1. Set the page title to "Privacy Policy"
+2. Render a `<h1>` tag with the text "Dino-Diner Website Privacy Policy"
+3. Render the following privacy policy in a `<p>` tag:
+
+_Dino-Diner respects and values the privacy of its customers, as we hope you respect and value our own. This site does not collect any data on you.  This site does not use cookies.  This site only displays information about Dino-Diner and its delectable food and delightful dinosaur-themed ambiance._
+
+## About Page (10 points Possible)
+Create a new Razor page named _About.cshtml_.  It should:
+1. Set the page title to "About"
+2. Render a `<h1>` tag with the text "About Dino-Diner"
+3. Render the following description in a `<p>` tag:
+
+_Founded in 2019 from the collective collective consciousness of the Fall Semester CIS 400 students of Kansas State University, Dino-Diner is devoted to bringing you the finest in dinosaur-themed dining experiences. Despite the prehistoric nature of our menu, we only use the freshest of ingredients, and no dinosaurs were harmed to bring our delectable fare to you._
+
+## Menu Page (70 total points possible)
+
+### Create the Page (10 points possible)
+Create a new Razor page named _Menu.cshtml_.  It should create an instance of the `Menu` class from the `DinoDiner.Menu` project and provide a read-only property to access it (hint, you will need to add the Menu Project to your Website Project's References).  The page should have a 1st level header tag (`<h1>`) with the text "Menu".
+
+### List the Menu Categories (20 points possible)
+On the Menu page, list the four categories of menu items (Combos, Entrees, Sides, and Drinks) as 2nd level header tags (`<h2>`).
+
+### List the Items (40 points possible)
+Below each of these tags, list the items in that category.  Each item should be placed in its own `<div>` with a class of `"menu-item"`.  The div should include, nested inside, the name of the menu item, its price, its calories, and the list of its ingredients.  You may use additional HTML tags to organize and present this information.

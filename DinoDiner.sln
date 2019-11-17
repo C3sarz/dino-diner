@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuTest", "MenuTest\MenuTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9FABDA8A-4F96-4763-A7C3-41AC367CE151}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{889FD0FE-60A4-446D-A88D-90B04FF58347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9FABDA8A-4F96-4763-A7C3-41AC367CE151}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FABDA8A-4F96-4763-A7C3-41AC367CE151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FABDA8A-4F96-4763-A7C3-41AC367CE151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889FD0FE-60A4-446D-A88D-90B04FF58347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889FD0FE-60A4-446D-A88D-90B04FF58347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889FD0FE-60A4-446D-A88D-90B04FF58347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889FD0FE-60A4-446D-A88D-90B04FF58347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
