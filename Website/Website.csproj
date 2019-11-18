@@ -10,10 +10,19 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <None Include="wwwroot\images\DinoDiner-24.png" />
+    <None Include="wwwroot\images\DinoDiner-27.png" />
+    <None Include="wwwroot\images\DinoDiner-29.png" />
+    <None Include="wwwroot\images\DinoDiner-32.png" />
+    <None Include="wwwroot\images\DinoDiner-35.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Menu\Menu.csproj" />
   </ItemGroup>
 
 </Project>
