@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns all menu items.
         /// </summary>
-        List<IMenuItem> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
@@ -31,7 +31,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns all available entrees.
         /// </summary>
-        List<IMenuItem> AvailableEntrees
+        public List<IMenuItem> AvailableEntrees
         {
             get
             {
@@ -50,7 +50,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns all availablew sides.
         /// </summary>
-        List<IMenuItem> AvailableSides
+        public List<IMenuItem> AvailableSides
         {
             get
             {
@@ -66,7 +66,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns all available drinks.
         /// </summary>
-        List<IMenuItem> AvailableDrinks
+        public List<IMenuItem> AvailableDrinks
         {
             get
             {
@@ -82,12 +82,16 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns all available combos.
         /// </summary>
-        List<IMenuItem> AvailableCombos
+        public List<IMenuItem> AvailableCombos
         {
             get
             {
                 List<IMenuItem> combos = new List<IMenuItem>();
-                combos.Add(new CretaceousCombo(new TRexKingBurger()));
+                IMenuItem[] items = AvailableEntrees.ToArray();
+                foreach (IMenuItem item in items)
+                {
+                    combos.Add(new CretaceousCombo(item as Entree));
+                }
                 return combos;
             }
         }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Class: Menu.cshtml.cs
+* Author: Cesar Zavala
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,10 +13,29 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-        public Menu Menu { get; }
+        /// <summary>
+        /// Holds an instance of the Menu;
+        /// </summary>
+        public Menu Menu { get; } = new Menu();
+
+        /// <summary>
+        /// Holds all available menu items.
+        /// </summary>
+        public List<IMenuItem> AvailableMenuItems {
+            get
+            {
+                List<IMenuItem> items = new List<IMenuItem>();
+                 items.AddRange(Menu.AvailableMenuItems);
+                return items;
+            }
+        } 
+
+        /// <summary>
+        /// Called when the webpage is loaded.
+        /// </summary>
         public void OnGet()
         {
-
+            
         }
     }
 }
