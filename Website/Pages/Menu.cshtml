@@ -1,32 +1,76 @@
 ﻿@page
 @model Website.Pages.MenuModel
 @{
-	ViewData["Title"] = "Menu";
+    ViewData["Title"] = "Menu";
 }
 
 <h1>Menu</h1>
 
-<h2>Combos</h2>
+<h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
 @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
 {
-	<div class="menu-item">- @item.ToString()</div>
+<div class="menu-item">
+    <h3>@item.ToString()</h3>
+    <div>Price: @item.Price</div>
+    <div>Calories: @item.Calories</div>
+    <h4>Ingredients:</h4>
+    <div>
+        @foreach (string s in item.Ingredients)
+        {
+            <div class="ingredient">- @s</div>
+        }
+    </div>
+</div>
 }
-<h2>Entrees</h2>
+<h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
 @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
 {
-	<div class="menu-item">- @item.ToString()</div>
+<div class="menu-item">
+    <h3>@item.ToString()</h3>
+    <div>Price: @item.Price</div>
+    <div>Calories: @item.Calories</div>
+    <h4>Ingredients:</h4>
+    <div>
+        @foreach (string s in item.Ingredients)
+        {
+            <div class="ingredient">- @s</div>
+        }
+    </div>
+</div>
 }
 
 @* Should I add each individual size?? *@
 
-<h2>Sides</h2>
+<h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
 @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
 {
-	<div class="menu-item">- @item.ToString()</div>
+<div class="menu-item">
+    <h3>@item.ToString()</h3>
+    <div>Price: @item.Price</div>
+    <div>Calories: @item.Calories</div>
+    <h4>Ingredients:</h4>
+    <div>
+        @foreach (string s in item.Ingredients)
+        {
+            <div class="ingredient">- @s</div>
+        }
+    </div>
+</div>
 }
-<h2>Drinks</h2>
+<h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
 @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
 {
-	<div class="menu-item">- @item.ToString()</div>
+<div class="menu-item">
+    <h3>@item.ToString()</h3>
+    <div>Price: @item.Price</div>
+    <div>Calories: @item.Calories</div>
+    <h4>Ingredients:</h4>
+    <div>
+        @foreach (string s in item.Ingredients)
+        {
+            <div class="ingredient">- @s</div>
+        }
+    </div>
+</div>
 }
 <h3 style="text-align:left;font-size:15px"><a href="/Index">Home</a></h3>

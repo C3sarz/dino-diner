@@ -12,3 +12,8 @@ body {
     padding-right: 15px;
 }
 
+.menuCategory{
+    text-decoration: underline;
+    font-style: italic;
+}
+
