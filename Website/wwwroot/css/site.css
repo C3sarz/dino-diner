@@ -17,3 +17,16 @@ body {
     font-style: italic;
 }
 
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+    display: flex;
+    background-color: gray;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+}

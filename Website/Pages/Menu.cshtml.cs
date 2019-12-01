@@ -17,6 +17,7 @@ namespace Website.Pages
         /// Holds an instance of the Menu;
         /// </summary>
         public Menu Menu { get; } = new Menu();
+        public string search;
 
         /// <summary>
         /// Holds all available menu items.
@@ -36,6 +37,11 @@ namespace Website.Pages
         public void OnGet()
         {
             
+        }
+
+        public void OnPost(string search)
+        {
+
         }
     }
 }

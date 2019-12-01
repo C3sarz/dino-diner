@@ -4,73 +4,128 @@
     ViewData["Title"] = "Menu";
 }
 
-<h1>Menu</h1>
+    <div class="container" style="
+    width: 100vw;
+    display: flex;
+    flex-direction: row;">
 
-<h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
-@foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
-{
-<div class="menu-item">
-    <h3>@item.ToString()</h3>
-    <div>Price: @item.Price</div>
-    <div>Calories: @item.Calories</div>
-    <h4>Ingredients:</h4>
-    <div>
-        @foreach (string s in item.Ingredients)
-        {
-            <div class="ingredient">- @s</div>
-        }
-    </div>
-</div>
-}
-<h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
-@foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
-{
-<div class="menu-item">
-    <h3>@item.ToString()</h3>
-    <div>Price: @item.Price</div>
-    <div>Calories: @item.Calories</div>
-    <h4>Ingredients:</h4>
-    <div>
-        @foreach (string s in item.Ingredients)
-        {
-            <div class="ingredient">- @s</div>
-        }
-    </div>
-</div>
-}
+        <div class="menu">
+            <h1>Menu</h1>
+            <h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <div>Price: @item.Price</div>
+                    <div>@item.Calories Calories</div>
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
+                    </div>
+                </div>
+            }
 
-@* Should I add each individual size?? *@
+            <h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <div>Price: @item.Price</div>
+                    <div>@item.Calories Calories</div>
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
+                    </div>
+                </div>
+            }
 
-<h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
-@foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
-{
-<div class="menu-item">
-    <h3>@item.ToString()</h3>
-    <div>Price: @item.Price</div>
-    <div>Calories: @item.Calories</div>
-    <h4>Ingredients:</h4>
-    <div>
-        @foreach (string s in item.Ingredients)
-        {
-            <div class="ingredient">- @s</div>
-        }
-    </div>
-</div>
-}
-<h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
-@foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
-{
-<div class="menu-item">
-    <h3>@item.ToString()</h3>
-    <div>Price: @item.Price</div>
-    <div>Calories: @item.Calories</div>
-    <h4>Ingredients:</h4>
-    <div>
-        @foreach (string s in item.Ingredients)
-        {
-            <div class="ingredient">- @s</div>
-        }
-    </div>
-</div>
-}
-<h3 style="text-align:left;font-size:15px"><a href="/Index">Home</a></h3>
+            <h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <div>Price: @item.Price</div>
+                    <div>@item.Calories Calories</div>
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
+                    </div>
+                </div>
+            }
+            <h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <div>Price: @item.Price</div>
+                    <div>@item.Calories Calories</div>
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
+                    </div>
+                </div>
+            }
+            <h3 style="text-align:left;font-size:15px"><a href="/Index">Home</a></h3>
+        </div>
+
+
+        <form method="post" style="
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    border: solid;
+    max-height: 300px;
+    border-color: black;
+    min-width:200px;">
+
+            <h4>Search</h4>
+            <input type="text" name="search" id="search" value="@Model.search" />
+            <input type="submit" value="Search" />
+            <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
+
+            <h4>Filter By MPAA Rating</h4>
+            <label>
+                <input type="checkbox" value="G" name="mpaa" />
+                Rated G
+            </label>
+            <label>
+                <input type="checkbox" value="PG" name="mpaa" checked="checked" />
+                Rated PG
+            </label>
+            <label>
+                <input type="checkbox" value="PG-13" name="mpaa" checked="checked" />
+                Rated PG-13
+            </label>
+            <label>
+                <input type="checkbox" value="R" name="mpaa" checked="checked" />
+                Rated R
+            </label>
+            <label>
+                @* <input type="checkbox" value="NC-17" name="mpaa" checked="@Model.mpaa.Contains("NC-17")" /> *@
+                Rated NC-17
+            </label>
+
+            <h4>Review Scores</h4>
+            <label>
+                Minimum IMDB Rating:
+                <input type="number" min="0" max="10" step="0.1" name="minIMDB" value="3" />
+            </label>
+            <label>
+                Maxiumum IMDB Rating:
+                <input type="number" min="0" max="10" step="0.1" name="maxIMDB" value="5" />
+            </label>
+
+        </form>
+        </div>
