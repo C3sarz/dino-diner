@@ -95,37 +95,34 @@
             <input type="submit" value="Search" />
             <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
 
-            <h4>Filter By MPAA Rating</h4>
+            <h4>Menu Category</h4>
             <label>
-                <input type="checkbox" value="G" name="mpaa" />
-                Rated G
+                <input type="checkbox" value="E" name="mpaa" />
+                Entree
             </label>
             <label>
-                <input type="checkbox" value="PG" name="mpaa" checked="checked" />
-                Rated PG
+                <input type="checkbox" value="S" name="mpaa" checked="checked" />
+                Side
             </label>
             <label>
-                <input type="checkbox" value="PG-13" name="mpaa" checked="checked" />
-                Rated PG-13
+                <input type="checkbox" value="D" name="mpaa" checked="checked" />
+                Drink
             </label>
             <label>
-                <input type="checkbox" value="R" name="mpaa" checked="checked" />
-                Rated R
-            </label>
-            <label>
-                @* <input type="checkbox" value="NC-17" name="mpaa" checked="@Model.mpaa.Contains("NC-17")" /> *@
-                Rated NC-17
+                <input type="checkbox" value="C" name="mpaa" checked="checked" />
+                Combo
             </label>
 
-            <h4>Review Scores</h4>
+            <h4>Price</h4>
             <label>
-                Minimum IMDB Rating:
+                Min:
                 <input type="number" min="0" max="10" step="0.1" name="minIMDB" value="3" />
-            </label>
-            <label>
-                Maxiumum IMDB Rating:
+                Max:
                 <input type="number" min="0" max="10" step="0.1" name="maxIMDB" value="5" />
             </label>
+
+            <h4>Exclude Ingredients:</h4>
+
 
         </form>
         </div>
