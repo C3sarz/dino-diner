@@ -97,6 +97,25 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Returns a hashset with every unique ingredient in the menu.
+        /// </summary>
+        public HashSet<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> ingredients = new HashSet<string>();
+                foreach(IMenuItem item in AvailableMenuItems)
+                {
+                    foreach(string ingredient in item.Ingredients)
+                    {
+                        ingredients.Add(ingredient);
+                    }
+                }
+                return ingredients;
+            }            
+        }
+
+        /// <summary>
         /// Override the ToString method.
         /// </summary>
         /// <returns></returns>
