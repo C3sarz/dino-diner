@@ -17,7 +17,7 @@
             <h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
             {
-                @if ((Model.CheckIfInPriceRange((float)item.Price)) && !Model.ContainsExcludedIngredient(item))
+                @if ((Model.CheckIfInPriceRange((float)item.Price)) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
                 {
                     <div class="menu-item">
                         <h3>@item.ToString()</h3>
@@ -40,7 +40,7 @@
             <h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
                 {
                     <div class="menu-item">
                         <h3>@item.ToString()</h3>
@@ -63,7 +63,7 @@
             <h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
                 {
                     <div class="menu-item">
                         <h3>@item.ToString()</h3>
@@ -86,7 +86,7 @@
             <h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
                 {
                     <div class="menu-item">
                         <h3>@item.ToString()</h3>
@@ -118,7 +118,7 @@
     min-width:200px;">
 
         <h1>Search</h1>
-        <input type="text" name="search" id="search" value="@Model.search" />
+        <input type="text" name="search" id="search" value="@Model.Search" />
         <input type="submit" name="filter" id="filter" value="Search and Filter" />
 
         <h4>Menu Category</h4>

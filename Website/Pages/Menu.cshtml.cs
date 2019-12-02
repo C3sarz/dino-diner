@@ -19,7 +19,7 @@ namespace Website.Pages
         public Menu Menu { get; } = new Menu();
 
         [BindProperty]
-        public string search { get; set; }
+        public string Search { get; set; }
 
         [BindProperty]
         public float? minimumPrice { get; set; }
@@ -94,6 +94,18 @@ namespace Website.Pages
                 if (excludedIngredients.Contains(ingredient)) return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Verifies if the menu item is searched for.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool InSearchResult(string name)
+        {
+            if (Search is null) return true;
+            else if (name.Contains(Search, StringComparison.OrdinalIgnoreCase)) return true;
+            else return false;
         }
     }
 }
