@@ -50,7 +50,7 @@
             {
                 <div class="menu-item">
                     <h3>@item.ToString()</h3>
-                    <div>Price: @item.Price</div>
+                    <div>Price: @item.Price</div>-
                     <div>@item.Calories Calories</div>
                     <h4>Ingredients:</h4>
                     <div>
@@ -97,28 +97,28 @@
 
             <h4>Menu Category</h4>
             <label>
-                <input type="checkbox" value="E" name="mpaa" />
+                <input class="menu-filter" type="checkbox" value="Combo" name="menuCategory" checked="@Model.menuCategory.Contains("Combo")"/>
+                Combo
+            </label>
+            <label>
+                <input class="menu-filter" type="checkbox" value="Entree" name="menuCategory" checked="@Model.menuCategory.Contains("Entree")" />
                 Entree
             </label>
             <label>
-                <input type="checkbox" value="S" name="mpaa" checked="checked" />
+                <input class="menu-filter" type="checkbox" value="Side" name="menuCategory" checked="@Model.menuCategory.Contains("Side")" />
                 Side
             </label>
             <label>
-                <input type="checkbox" value="D" name="mpaa" checked="checked" />
+                <input class="menu-filter" type="checkbox" value="Drink" name="menuCategory" checked="@Model.menuCategory.Contains("Drink")" />
                 Drink
-            </label>
-            <label>
-                <input type="checkbox" value="C" name="mpaa" checked="checked" />
-                Combo
             </label>
 
             <h4>Price</h4>
             <label>
                 Min:
-                <input type="number" min="0" max="10" step="0.1" name="minIMDB" value="3" />
+                <input type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.minPrice" />
                 Max:
-                <input type="number" min="0" max="10" step="0.1" name="maxIMDB" value="5" />
+                <input type="number" min="0" max="10" step="0.1" name="maxPrince" value="@Model.maxPrice" />
             </label>
 
             <h4>Exclude Ingredients:</h4>

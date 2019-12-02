@@ -17,7 +17,18 @@ namespace Website.Pages
         /// Holds an instance of the Menu;
         /// </summary>
         public Menu Menu { get; } = new Menu();
-        public string search;
+
+        [BindProperty]
+        public string search { get; set; }
+
+        [BindProperty]
+        public float? minPrice { get; set; }
+
+        [BindProperty]
+        public float? maxPrice { get; set; }
+
+        [BindProperty]
+        public List<string> menuCategory { get; set; } = new List<string>();
 
         /// <summary>
         /// Holds all available menu items.
@@ -41,6 +52,8 @@ namespace Website.Pages
 
         public void OnPost(string search)
         {
+
+
 
         }
     }
