@@ -22,10 +22,13 @@ namespace Website.Pages
         public string search { get; set; }
 
         [BindProperty]
-        public float? minPrice { get; set; }
+        public float? minimumPrice { get; set; }
 
         [BindProperty]
-        public float? maxPrice { get; set; }
+        public float? maximumPrice { get; set; }
+
+        [BindProperty]
+        public List<string> excludedIngredients { get; set; } = new List<string>();
 
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
@@ -33,21 +36,25 @@ namespace Website.Pages
         /// <summary>
         /// Holds all available menu items.
         /// </summary>
-        public List<IMenuItem> AvailableMenuItems {
+        public List<IMenuItem> AvailableMenuItems
+        {
             get
             {
                 List<IMenuItem> items = new List<IMenuItem>();
-                 items.AddRange(Menu.AvailableMenuItems);
+                items.AddRange(Menu.AvailableMenuItems);
                 return items;
             }
-        } 
+        }
 
         /// <summary>
         /// Called when the webpage is loaded.
         /// </summary>
         public void OnGet()
         {
-            
+            menuCategory.Add("Combo");
+            menuCategory.Add("Entree");
+            menuCategory.Add("Side");
+            menuCategory.Add("Drink");
         }
 
         public void OnPost(string search)
@@ -55,6 +62,38 @@ namespace Website.Pages
 
 
 
+        }
+
+        /// <summary>
+        /// Checks if the item is within the filtered range.
+        /// </summary>
+        /// <param name="Itemprice"></param>
+        /// <returns></returns>
+        public bool CheckIfInPriceRange(float Itemprice)
+        {
+            if (minimumPrice is null && maximumPrice is null) return true;
+            else if (minimumPrice is null || maximumPrice is null)
+            {
+                if (minimumPrice is null && Itemprice <= maximumPrice) return true;
+                if (maximumPrice is null && Itemprice >= minimumPrice) return true;
+                else return false;
+            }
+            else if (Itemprice <= maximumPrice && Itemprice >= minimumPrice) return true;
+            else return false;
+        }
+
+        /// <summary>
+        /// Checks if a menu item contains an excluded ingredient.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool ContainsExcludedIngredient(IMenuItem item)
+        {
+            foreach(string ingredient in item.Ingredients)
+            {
+                if (excludedIngredients.Contains(ingredient)) return true;
+            }
+            return false;
         }
     }
 }

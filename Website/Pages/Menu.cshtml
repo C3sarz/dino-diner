@@ -4,131 +4,158 @@
     ViewData["Title"] = "Menu";
 }
 
-    <div class="container" style="
+<div class="container" style="
     width: 100vw;
     display: flex;
     flex-direction: row;">
 
-        <div class="menu">
-            <h1>Menu</h1>
+    <div class="menu" style="padding:100px">
+        <h1>Menu</h1>
+
+        @if (Model.menuCategory.Contains("Combo"))
+        {
             <h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
             {
-                <div class="menu-item">
-                    <h3>@item.ToString()</h3>
-                    <div>Price: @item.Price</div>
-                    <div>@item.Calories Calories</div>
-                    <h4>Ingredients:</h4>
-                    <div>
-                        @foreach (string s in item.Ingredients)
-                        {
-                            <div class="ingredient">- @s</div>
-                        }
+                @if ((Model.CheckIfInPriceRange((float)item.Price)) && !Model.ContainsExcludedIngredient(item))
+                {
+                    <div class="menu-item">
+                        <h3>@item.ToString()</h3>
+                        <div>Price: $@item.Price</div>
+                        <div>@item.Calories Calories</div>
+                        <h4>Ingredients:</h4>
+                        <div>
+                            @foreach (string s in item.Ingredients)
+                            {
+                                <div class="ingredient">- @s</div>
+                            }
+                        </div>
                     </div>
-                </div>
+                }
             }
+        }
 
+        @if (Model.menuCategory.Contains("Entree"))
+        {
             <h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
             {
-                <div class="menu-item">
-                    <h3>@item.ToString()</h3>
-                    <div>Price: @item.Price</div>
-                    <div>@item.Calories Calories</div>
-                    <h4>Ingredients:</h4>
-                    <div>
-                        @foreach (string s in item.Ingredients)
-                        {
-                            <div class="ingredient">- @s</div>
-                        }
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                {
+                    <div class="menu-item">
+                        <h3>@item.ToString()</h3>
+                        <div>Price: $@item.Price</div>
+                        <div>@item.Calories Calories</div>
+                        <h4>Ingredients:</h4>
+                        <div>
+                            @foreach (string s in item.Ingredients)
+                            {
+                                <div class="ingredient">- @s</div>
+                            }
+                        </div>
                     </div>
-                </div>
+                }
             }
+        }
 
+        @if (Model.menuCategory.Contains("Side"))
+        {
             <h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
             {
-                <div class="menu-item">
-                    <h3>@item.ToString()</h3>
-                    <div>Price: @item.Price</div>-
-                    <div>@item.Calories Calories</div>
-                    <h4>Ingredients:</h4>
-                    <div>
-                        @foreach (string s in item.Ingredients)
-                        {
-                            <div class="ingredient">- @s</div>
-                        }
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                {
+                    <div class="menu-item">
+                        <h3>@item.ToString()</h3>
+                        <div>Price: $@item.Price</div>-
+                        <div>@item.Calories Calories</div>
+                        <h4>Ingredients:</h4>
+                        <div>
+                            @foreach (string s in item.Ingredients)
+                            {
+                                <div class="ingredient">- @s</div>
+                            }
+                        </div>
                     </div>
-                </div>
+                }
             }
+        }
+
+        @if (Model.menuCategory.Contains("Drink"))
+        {
             <h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
             @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
             {
-                <div class="menu-item">
-                    <h3>@item.ToString()</h3>
-                    <div>Price: @item.Price</div>
-                    <div>@item.Calories Calories</div>
-                    <h4>Ingredients:</h4>
-                    <div>
-                        @foreach (string s in item.Ingredients)
-                        {
-                            <div class="ingredient">- @s</div>
-                        }
+                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item))
+                {
+                    <div class="menu-item">
+                        <h3>@item.ToString()</h3>
+                        <div>Price: $@item.Price</div>
+                        <div>@item.Calories Calories</div>
+                        <h4>Ingredients:</h4>
+                        <div>
+                            @foreach (string s in item.Ingredients)
+                            {
+                                <div class="ingredient">- @s</div>
+                            }
+                        </div>
                     </div>
-                </div>
+                }
+
             }
-            <h3 style="text-align:left;font-size:15px"><a href="/Index">Home</a></h3>
-        </div>
+        }
+
+    </div>
 
 
-        <form method="post" style="
+    <form method="post" style="
     display: flex;
     flex-direction: column;
     padding: 100px;
     border: solid;
+    max-height: 1000px;
     border-color: black;
     min-width:200px;">
 
-            <h4>Search</h4>
-            <input type="text" name="search" id="search" value="@Model.search" />
-            <input type="submit" value="Search" />
-            <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
+        <h1>Search</h1>
+        <input type="text" name="search" id="search" value="@Model.search" />
+        <input type="submit" name="filter" id="filter" value="Search and Filter" />
 
-            <h4>Menu Category</h4>
-            <label>
-                <input class="menu-filter" type="checkbox" value="Combo" name="menuCategory" checked="@Model.menuCategory.Contains("Combo")" />
-                Combo
-            </label>
-            <label>
-                <input class="menu-filter" type="checkbox" value="Entree" name="menuCategory" checked="@Model.menuCategory.Contains("Entree")" />
-                Entree
-            </label>
-            <label>
-                <input class="menu-filter" type="checkbox" value="Side" name="menuCategory" checked="@Model.menuCategory.Contains("Side")" />
-                Side
-            </label>
-            <label>
-                <input class="menu-filter" type="checkbox" value="Drink" name="menuCategory" checked="@Model.menuCategory.Contains("Drink")" />
-                Drink
-            </label>
+        <h4>Menu Category</h4>
+        <label>
+            <input class="menu-filter" type="checkbox" value="Combo" name="menuCategory" checked="@Model.menuCategory.Contains("Combo")" />
+            Combo
+        </label>
+        <label>
+            <input class="menu-filter" type="checkbox" value="Entree" name="menuCategory" checked="@Model.menuCategory.Contains("Entree")" />
+            Entree
+        </label>
+        <label>
+            <input class="menu-filter" type="checkbox" value="Side" name="menuCategory" checked="@Model.menuCategory.Contains("Side")" />
+            Side
+        </label>
+        <label>
+            <input class="menu-filter" type="checkbox" value="Drink" name="menuCategory" checked="@Model.menuCategory.Contains("Drink")" />
+            Drink
+        </label>
 
-            <h4>Price</h4>
+        <h4>Price</h4>
+        <label>
+            Min:
+            <input type="number" min="0" max="100" step="0.25" name="minimumPrice" id="minimum-price" value="@Model.minimumPrice" />
+            Max:
+            <input type="number" min="0" max="100" step="0.25" id="maximum-price" name="maximumPrice" value="@Model.maximumPrice" />
+        </label>
+
+        <h4>Exclude Ingredients:</h4>
+        @foreach (string ingredient in @Model.Menu.PossibleIngredients)
+        {
             <label>
-                Min:
-                <input type="number" min="0" max="100" step="0.25" name="minimumPrice" id="minimum-price" value="@Model.minPrice" />
-                Max:
-                <input type="number" min="0" max="100" step="0.25" id="maximum-price" name="maximumPrice" value="@Model.maxPrice" />
+                <input class="exclude-ingredient" type="checkbox" value="@ingredient" name="excludedIngredients" checked="@Model.excludedIngredients.Contains(ingredient)" />
+                @ingredient
             </label>
-
-            <h4>Exclude Ingredients:</h4>
-            @foreach (string ingredient in @Model.Menu.PossibleIngredients)
-            {
-                <label>
-                    <input class="exclude-ingredient" type="checkbox" value="Combo" name="@ingredient" checked="checked" />
-                    @ingredient
-                </label>
-            }
+        }
 
 
-        </form>
-        </div>
+    </form>
+</div>
