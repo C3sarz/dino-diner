@@ -15,93 +15,175 @@
         @if (Model.menuCategory.Contains("Combo"))
         {
             <h2 class="menuCategory" style="text-decoration:underline">Combos</h2>
-            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableCombos)
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.FilterSearch(Model.Search).OfType<DinoDiner.Menu.CretaceousCombo>())
             {
-                @if ((Model.CheckIfInPriceRange((float)item.Price)) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
-                {
-                    <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <div>Price: $@item.Price</div>
-                        <div>@item.Calories Calories</div>
-                        <h4>Ingredients:</h4>
-                        <div>
-                            @foreach (string s in item.Ingredients)
-                            {
-                                <div class="ingredient">- @s</div>
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+
+                    <table style="width:100%;border:solid">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@item.Price</td>
+                            <td>@item.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            @{
+                                DinoDiner.Menu.CretaceousCombo sizedItem = item as DinoDiner.Menu.CretaceousCombo;
+                                sizedItem.Size = DinoDiner.Menu.Size.Medium;
                             }
-                        </div>
+                            <td>@sizedItem.Price</td>
+                            <td>@sizedItem.Calories</td>
+                        </tr>
+                        <tr>
+                            @{
+                                sizedItem.Size = DinoDiner.Menu.Size.Large;
+                            }
+                            <td>Large</td>
+                            <td>@sizedItem.Price</td>
+                            <td>@sizedItem.Calories</td>
+                        </tr>
+                    </table>
+
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
                     </div>
-                }
+                </div>
             }
         }
 
         @if (Model.menuCategory.Contains("Entree"))
         {
             <h2 class="menuCategory" style="text-decoration:underline">Entrees</h2>
-            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableEntrees)
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.FilterSearch(Model.Search).OfType<DinoDiner.Menu.Entree>())
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
-                {
-                    <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <div>Price: $@item.Price</div>
-                        <div>@item.Calories Calories</div>
-                        <h4>Ingredients:</h4>
-                        <div>
-                            @foreach (string s in item.Ingredients)
-                            {
-                                <div class="ingredient">- @s</div>
-                            }
-                        </div>
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+
+                    <table style="width:100%;border:solid">
+                        <tr>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@item.Price</td>
+                            <td>@item.Calories</td>
+                        </tr>
+                    </table>
+
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
                     </div>
-                }
+                </div>
             }
         }
 
         @if (Model.menuCategory.Contains("Side"))
         {
             <h2 class="menuCategory" style="text-decoration:underline">Sides</h2>
-            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableSides)
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.FilterSearch(Model.Search).OfType<DinoDiner.Menu.Side>())
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
-                {
-                    <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <div>Price: $@item.Price</div>-
-                        <div>@item.Calories Calories</div>
-                        <h4>Ingredients:</h4>
-                        <div>
-                            @foreach (string s in item.Ingredients)
-                            {
-                                <div class="ingredient">- @s</div>
-                            }
-                        </div>
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <div>
+                        <table style="width:100%;border:solid">
+                            <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td>@item.Price</td>
+                                <td>@item.Calories</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                @{
+                                    DinoDiner.Menu.Side sizedItem = item as DinoDiner.Menu.Side;
+                                    sizedItem.Size = DinoDiner.Menu.Size.Medium;
+                                }
+                                <td>@sizedItem.Price</td>
+                                <td>@sizedItem.Calories</td>
+                            </tr>
+                            <tr>
+                                @{
+                                    sizedItem.Size = DinoDiner.Menu.Size.Large;
+                                }
+                                <td>Large</td>
+                                <td>@sizedItem.Price</td>
+                                <td>@sizedItem.Calories</td>
+                            </tr>
+                        </table>
                     </div>
-                }
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
+                    </div>
+                </div>
             }
         }
 
         @if (Model.menuCategory.Contains("Drink"))
         {
             <h2 class="menuCategory" style="text-decoration:underline">Drinks</h2>
-            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.Menu.AvailableDrinks)
+            @foreach (@DinoDiner.Menu.IMenuItem item in @Model.FilterSearch(Model.Search).OfType<DinoDiner.Menu.Drink>())
             {
-                @if (Model.CheckIfInPriceRange((float)item.Price) && !Model.ContainsExcludedIngredient(item) && Model.InSearchResult(item.ToString()))
-                {
-                    <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <div>Price: $@item.Price</div>
-                        <div>@item.Calories Calories</div>
-                        <h4>Ingredients:</h4>
-                        <div>
-                            @foreach (string s in item.Ingredients)
-                            {
-                                <div class="ingredient">- @s</div>
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <table style="width:100%;border:solid">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@item.Price</td>
+                            <td>@item.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            @{
+                                DinoDiner.Menu.Drink sizedItem = item as DinoDiner.Menu.Drink;
+                                sizedItem.Size = DinoDiner.Menu.Size.Medium;
                             }
-                        </div>
+                            <td>@sizedItem.Price</td>
+                            <td>@sizedItem.Calories</td>
+                        </tr>
+                        <tr>
+                            @{
+                                sizedItem.Size = DinoDiner.Menu.Size.Large;
+                            }
+                            <td>Large</td>
+                            <td>@sizedItem.Price</td>
+                            <td>@sizedItem.Calories</td>
+                        </tr>
+                    </table>
+                    <h4>Ingredients:</h4>
+                    <div>
+                        @foreach (string s in item.Ingredients)
+                        {
+                            <div class="ingredient">- @s</div>
+                        }
                     </div>
-                }
-
+                </div>
             }
         }
 

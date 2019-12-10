@@ -107,5 +107,31 @@ namespace Website.Pages
             else if (name.Contains(Search, StringComparison.OrdinalIgnoreCase)) return true;
             else return false;
         }
+
+        /// <summary>
+        /// Returns a collection with the search and filtering results.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterSearch(string s)
+        {
+            IEnumerable<IMenuItem> result;
+            if (s is null) result = AvailableMenuItems.Where(item => !ContainsExcludedIngredient(item));
+            else result = AvailableMenuItems.Where(item => item.ToString().Contains(s, StringComparison.OrdinalIgnoreCase) && !ContainsExcludedIngredient(item));
+
+            if (minimumPrice is null && maximumPrice is null);  //Nothing in price boxes.
+
+            else if (minimumPrice is null)
+            {
+                result = result.Where(item => item.Price <= maximumPrice);
+            }
+            else if (maximumPrice is null)
+            {
+                result = result.Where(item => item.Price >= minimumPrice);
+            }
+            else result = result.Where(item => item.Price >= minimumPrice && item.Price <= maximumPrice);
+
+            return result.ToList();
+        }
     }
 }

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu
+namespace DinoDiner.Menu 
 {
     /// <summary>
     /// Interface that links all menu tiems.
